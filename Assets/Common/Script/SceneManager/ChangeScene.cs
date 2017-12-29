@@ -10,7 +10,11 @@ public class ChangeScene : MonoBehaviour {
 	void Start () {
 		
 	}
-
+	/// <summary>
+	/// 引数：シーンの名前
+	/// </summary>
+	/// <returns>The scene.</returns>
+	/// <param name="loadSceneName">Load scene name.</param>
 	IEnumerator LoadScene(string loadSceneName)
 	{
 		if(!string.IsNullOrEmpty(preview))
@@ -23,14 +27,10 @@ public class ChangeScene : MonoBehaviour {
 		}
 
 		AsyncOperation Async = SceneManager.LoadSceneAsync (loadSceneName, LoadSceneMode.Additive);
-		do {
-			yield return WaitForEndOfFrame ();
-		} 
-		while(!Async.isDone);
+
+		while (!Async.isDone) {
+			yield return  null;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
