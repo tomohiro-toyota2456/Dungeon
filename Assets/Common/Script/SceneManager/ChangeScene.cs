@@ -6,16 +6,19 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour {
 
 	private string preview;
-	// Use this for initialization
-	void Start () {
-		
+
+
+	public void LoadScene(string loadSceneName)
+	{
+		StartCoroutine (_LoadScene (loadSceneName));
 	}
+
 	/// <summary>
 	/// 引数：シーンの名前
 	/// </summary>
 	/// <returns>The scene.</returns>
 	/// <param name="loadSceneName">Load scene name.</param>
-	IEnumerator LoadScene(string loadSceneName)
+	IEnumerator _LoadScene(string loadSceneName)
 	{
 		if(!string.IsNullOrEmpty(preview))
 		{
@@ -31,6 +34,10 @@ public class ChangeScene : MonoBehaviour {
 		while (!Async.isDone) {
 			yield return  null;
 		}
+
+		preview = loadSceneName;
+
 	}
+		
 
 }
