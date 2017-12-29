@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e7cfd7be3f4c7411fb0fa4c392fa6681
+timeCreated: 1514559226
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pandora_font_num
+  fontNames:
+  - Pandora_font_num
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
