@@ -28,9 +28,22 @@ public class PlayerEquipments
     }
   }
 
-  public void SetMainWepon(PlayerEquipmentWepon wepon, EquipmentOptionBase opt1, EquipmentOptionBase opt2, EquipmentOptionBase opt3)
+  public void SetMainWepon(WeponParam wepon, EquipmentOptionBase opt1, EquipmentOptionBase opt2, EquipmentOptionBase opt3)
   {
+    equipmentUsageCounts[0] = 0;
+    mainWepon.Equip(wepon, opt1, opt2, opt3);
+  }
 
+  public void SetSubWepon(WeponParam wepon, EquipmentOptionBase opt1, EquipmentOptionBase opt2, EquipmentOptionBase opt3)
+  {
+    equipmentUsageCounts[1] = 0;
+    subWepon.Equip(wepon, opt1, opt2, opt3);
+  }
+
+  public void SetArmor(ArmorParam armor, EquipmentOptionBase opt1, EquipmentOptionBase opt2, EquipmentOptionBase opt3)
+  {
+    equipmentUsageCounts[2] = 0;
+    this.armor.Equip(armor, opt1, opt2, opt3);
   }
 
   //武器使用関数
