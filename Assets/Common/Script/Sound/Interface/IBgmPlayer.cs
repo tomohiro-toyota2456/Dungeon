@@ -9,7 +9,7 @@
   * ******************************************************/
 public interface IBgmPlayer
 {
-  void Play(string bgmPath,bool isLoop);
+  void Play(string bgmPath,bool isLoop = true);
   void PlayCrossFade(string bgmPath,bool isLoop,float fadeTime);
   void Stop();
   void StopFade(float fadeTime);
