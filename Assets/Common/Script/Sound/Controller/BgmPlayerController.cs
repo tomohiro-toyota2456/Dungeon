@@ -52,13 +52,13 @@ public class BgmPlayerController : MonoBehaviour,IBgmPlayer
   }
 
   //即時再生
-  void IBgmPlayer.Play(string bgmPath, bool isLoop = true)
+  void IBgmPlayer.Play(string bgmPath, bool isLoop)
   {
-    PlayCrossFade(bgmPath, isLoop,0);
+    PlayCrossFade(bgmPath,isLoop,0);
   }
 
   //クロスフェード再生
-  void IBgmPlayer.PlayCrossFade(string bgmPath,bool isLoop = true,float fadeTime =1.0f)
+  void IBgmPlayer.PlayCrossFade(string bgmPath,bool isLoop,float fadeTime)
   {
     PlayCrossFade(bgmPath, isLoop, fadeTime);
   }
