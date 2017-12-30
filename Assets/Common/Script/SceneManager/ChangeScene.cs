@@ -20,6 +20,10 @@ public class ChangeScene : UnitySingleton <ChangeScene> {
 	/// <param name="loadSceneName">Load scene name.</param>
 	IEnumerator _LoadScene(string loadSceneName)
 	{
+		Fade.Instance.FadeIn ();
+		while (Fade.Instance.IsFade) {
+			yield return null;
+		}
 		if(!string.IsNullOrEmpty(preview))
 		{
 			AsyncOperation previewAsync = SceneManager.UnloadSceneAsync (preview);
@@ -36,7 +40,10 @@ public class ChangeScene : UnitySingleton <ChangeScene> {
 		}
 
 		preview = loadSceneName;
-
+		Fade.Instance.FadeOut ();
+		while (Fade.Instance.IsFade) {
+			yield return null;
+		}
 	}
 		
 
