@@ -33,11 +33,16 @@ public class Fade : UnitySingleton <Fade> {
 	public void FadeIn()
 	{
 		isFade = true;
+    fadeImage.gameObject.SetActive(true);
 		fadeImage.DOFade (1.0f, fadeTime).OnComplete(()=>{isFade=false;});
 	}
 	public void FadeOut()
 	{
 		isFade = true;
-		fadeImage.DOFade (0f, fadeTime).OnComplete(()=>{isFade=false;});
+		fadeImage.DOFade (0f, fadeTime).OnComplete(()=>
+    {
+      isFade =false;
+      fadeImage.gameObject.SetActive(false);
+    });
 	}
 }

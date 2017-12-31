@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeScene : UnitySingleton <ChangeScene> {
+public class ChangeScene : UnitySingleton <ChangeScene>
+{
+  [SerializeField]
+  string initLoadSceneName;
 
 	private string preview;
 
+  private void Start()
+  {
+    LoadScene(initLoadSceneName);
+  }
 
-	public void LoadScene(string loadSceneName)
+  public void LoadScene(string loadSceneName)
 	{
 		StartCoroutine (_LoadScene (loadSceneName));
 	}
