@@ -14,6 +14,20 @@ public class PlayerParam : MonoBehaviour
   public int MaxHp { get { return maxHp; } }
   public int CurHp { get { return curHp; } }
 
+  public WeponParam.EffectType MainWeponEffectType { get { return equipments.MainWeponEffectType; } }
+  public WeponParam.EffectType SubWeponEffectType { get { return equipments.SubWeponEffctType; } }
+
+  public struct ParamData
+  {
+    public ParamData(float atk,int cri)
+    {
+      this.atk = atk;
+      critical = cri;
+    }
+    public float atk;
+    public int critical;
+  }
+
   public void Init()
   {
     curHp = maxHp;
@@ -34,23 +48,29 @@ public class PlayerParam : MonoBehaviour
     equipments.SetArmor(armor, opt1, opt2, opt3);
   }
 
-  public int UseMainWepon(float enemyDef)
+  public ParamData UseMainWepon()
   {
-    int damage = (int)equipments.UseMainWepon(enemyDef);
-    return damage;
+    equipments.UseMainWepon();
+    ParamData paramData = new ParamData(equipments.CalcMainWeponAtk(), equipments.CalcMainWeponCritical());
+    return paramData;
   }
 
-  public int UseSubWepon(float enemyDef)
+  public ParamData UseSubWepon()
   {
-    int damage = (int)equipments.UseSubWepon(enemyDef);
-    return damage;
+    equipments.UseSubWepon();
+    ParamData paramData = new ParamData(equipments.CalcSubWeponAtk(), equipments.CalcSubWeponCritical());
+    return paramData;
   }
 
-  public int UseArmor(float enemyAtk,int enemyCriticalPoint)
+  public float UseArmor()
   {
-    int damage = (int)equipments.UseArmor(enemyAtk, enemyCriticalPoint);
-    curHp -= damage;
-    return damage;
+    equipments.UseArmor();
+    return equipments.CalcDef();
+  }
+
+  public void Damage(float damage)
+  {
+    curHp -= (int)damage;
   }
 
 }

@@ -47,6 +47,8 @@ public class PlayerEquipmentWepon
    }
 
   public int Id { get { return wepon.Id; } }
+  public int ImageId { get { return wepon.ImageId; } }
+  public WeponParam.EffectType EffectType { get { return wepon.eType; } }
 
 
   //最大使用回数計算

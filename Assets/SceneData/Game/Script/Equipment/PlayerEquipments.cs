@@ -17,6 +17,9 @@ public class PlayerEquipments
   public int enableUsingCountSubWepon { get { return subWepon.CalcDurability() - equipmentUsageCounts[1]; } }
   public int enableUsingCountArmor { get { return armor.CalcDurability() - equipmentUsageCounts[2]; } }
 
+  public WeponParam.EffectType MainWeponEffectType { get { return mainWepon.EffectType; } }
+  public WeponParam.EffectType SubWeponEffctType { get { return subWepon.EffectType; } }
+
   public PlayerEquipments()
   {
     mainWepon = new PlayerEquipmentWepon(WeponParam.WeponType.Main);
@@ -47,27 +50,44 @@ public class PlayerEquipments
   }
 
   //武器使用関数
-  public float UseMainWepon(float enemyDef)
+  public void UseMainWepon()
   {
     equipmentUsageCounts[0]++;
-    return UseWepon(enemyDef, mainWepon);
   }
 
-  public float UseSubWepon(float enemyDef)
+  public void UseSubWepon()
   {
     equipmentUsageCounts[1]++;
-    return UseWepon(enemyDef, subWepon);
   }
 
   //防具使用関数
-  public float UseArmor(float atk,int criticalPoint)
+  public void UseArmor()
   {
     equipmentUsageCounts[2]++;
-    return GameCommon.CalcDamage(atk, armor.CalcDef(), criticalPoint);
   }
 
-  float UseWepon(float enemyDef,PlayerEquipmentWepon wepon)
+  public float CalcMainWeponAtk()
   {
-    return GameCommon.CalcDamage(wepon.CalcAtkRandomMinToMax(), enemyDef, wepon.CalcCritical());
+    return mainWepon.CalcAtkRandomMinToMax();
+  }
+
+  public float CalcSubWeponAtk()
+  {
+    return subWepon.CalcAtkRandomMinToMax();
+  }
+
+  public int CalcMainWeponCritical()
+  {
+    return mainWepon.CalcCritical();
+  }
+
+  public int CalcSubWeponCritical()
+  {
+    return subWepon.CalcCritical();
+  }
+
+  public float CalcDef()
+  {
+    return armor.CalcDef();
   }
 }

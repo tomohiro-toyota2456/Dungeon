@@ -18,9 +18,9 @@ public class GameCommon
     return t;
   }
 
-  public static float CalcDamage(float atk,float def,int criticalPoint)
+  public static float CalcDamage(float atk,float def,float critical)
   {
-    float t = GameCommon.CalcCriticalBonus(criticalPoint);
+    float t = critical;
     return Mathf.Max(atk * t - def + GameCommon.CalcRandomDamage());
   }
 }

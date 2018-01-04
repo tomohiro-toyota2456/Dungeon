@@ -17,15 +17,19 @@ public class EnemyParam : MonoBehaviour
     curHp = param.MaxHp;
   }
 
-  public float Attack(float def)
+  public float CalcDef()
   {
-    return GameCommon.CalcDamage(Random.Range(param.MinAtk, param.MaxAtk), def, param.Critical);
+    return param.Def;
   }
 
-  public float Defence(float atk,int criticalPoint)
+  public PlayerParam.ParamData CalcAtk()
   {
-    int damage = (int)GameCommon.CalcDamage(atk, param.Def, criticalPoint);
-    curHp -= damage;
-    return damage;
+    PlayerParam.ParamData param = new PlayerParam.ParamData(Random.Range(this.param.MinAtk, this.param.MaxAtk), this.param.Critical);
+    return param;
+  }
+
+  public void Damage(float damage)
+  {
+    curHp -= (int)damage;
   }
 }
