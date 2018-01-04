@@ -60,16 +60,14 @@ public class PlayerEquipments
   }
 
   //防具使用関数
-  public float UseArmor()
+  public float UseArmor(float atk,int criticalPoint)
   {
     equipmentUsageCounts[2]++;
-    return armor.CalcDef();
+    return GameCommon.CalcDamage(atk, armor.CalcDef(), criticalPoint);
   }
 
   float UseWepon(float enemyDef,PlayerEquipmentWepon wepon)
   {
-    float t = GameCommon.CalcCriticalBonus(wepon.CalcCritical());
-    return Mathf.Max(0, wepon.CalcAtkRandomMinToMax() * t - enemyDef + GameCommon.CalcRandomDamage());
+    return GameCommon.CalcDamage(wepon.CalcAtkRandomMinToMax(), enemyDef, wepon.CalcCritical());
   }
-
 }

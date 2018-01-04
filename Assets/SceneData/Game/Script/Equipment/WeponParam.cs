@@ -10,6 +10,8 @@ public class WeponParam : EquipmentBaseParam
   [SerializeField]
   float maxAtk;
   [SerializeField]
+  EffectType etype;
+  [SerializeField]
   WeponType type;
 
   public enum WeponType
@@ -18,7 +20,15 @@ public class WeponParam : EquipmentBaseParam
     Sub
   }
 
+  public enum EffectType
+  {
+    Slashing,//斬撃
+    Striking//打撃
+  }
+
   public float MinAtk { get { return minAtk; } set { minAtk = value; } }
   public float MaxAtk { get { return maxAtk; } set { maxAtk = value; } }
   public WeponType Type { get { return type; } set { type = value; } }
+  public EffectType eType { get { return etype; } set { etype = value; } }
+
 }

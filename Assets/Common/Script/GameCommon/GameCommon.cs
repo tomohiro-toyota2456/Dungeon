@@ -17,4 +17,10 @@ public class GameCommon
     float t = Random.Range(0,100) < (baseCritical + addCriticalPoint) ? 2.0f : 1.0f;
     return t;
   }
+
+  public static float CalcDamage(float atk,float def,int criticalPoint)
+  {
+    float t = GameCommon.CalcCriticalBonus(criticalPoint);
+    return Mathf.Max(atk * t - def + GameCommon.CalcRandomDamage());
+  }
 }
