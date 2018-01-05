@@ -630,10 +630,15 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    ErrorHub: 0
+    Hub: 0
+    UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 0daa072f-dbf3-4e81-8e8c-7fb7ab52ead2
+  cloudProjectId: e205420f-393b-4f17-ae58-6d94e6549556
   projectName: Dungeon
   organizationId: pandora_soft
   cloudEnabled: 0
