@@ -9,6 +9,7 @@ public class BattleEffectFactory : MonoBehaviour,IBattleEffectFactory
 
   IBattleEffect IBattleEffectFactory.PlayEffect(int type)
   {
+    animations[type].PlayAnimation();
     return animations[type];
   }
 }

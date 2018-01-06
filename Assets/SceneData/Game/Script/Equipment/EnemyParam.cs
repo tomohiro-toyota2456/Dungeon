@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyParam : MonoBehaviour
+public class EnemyParam 
 {
-  [SerializeField]
   EnemyParamBase param;
 
   int curHp;
 
+  public int MaxHp { get { return param.MaxHp; } }
   public int CurHp { get { return curHp; } }
 
   public void Init(EnemyParamBase param)

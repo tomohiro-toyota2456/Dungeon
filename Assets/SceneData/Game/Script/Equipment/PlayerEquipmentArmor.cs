@@ -24,6 +24,8 @@ public class PlayerEquipmentArmor
   }
 
   public int Id { get { return armor.Id; } }
+  public int ImageId { get { return armor.ImageId; } }
+
   public float CalcDef()
   {
     float def = armor.Def;

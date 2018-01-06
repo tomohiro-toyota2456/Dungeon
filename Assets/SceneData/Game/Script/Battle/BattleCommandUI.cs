@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class BattleCommandUI : MonoBehaviour, IBattleCommand
 {
   [SerializeField]
-  Button mainWeponButton;
+  BattleCommandButton mainWeponButton;
   [SerializeField]
-  Button subWeponButton;
+  BattleCommandButton subWeponButton;
   [SerializeField]
-  Button itemButton;
+  BattleCommandButton itemButton;
   [SerializeField]
-  Button escapeButton;
+  BattleCommandButton escapeButton;
 
   int buttonType = -1;
   int IBattleCommand.ButtonType { get { return buttonType; } }
@@ -30,6 +30,17 @@ public class BattleCommandUI : MonoBehaviour, IBattleCommand
     subWeponButton.onClick.AddListener(OnClickSubWeponButton);
     itemButton.onClick.AddListener(OnClickItemButton);
     escapeButton.onClick.AddListener(OnClickEscapeButton);
+  }
+
+  public void SetWeponNum(int mainNum, int subNum)
+  {
+    mainWeponButton.SetNumber(mainNum);
+    subWeponButton.SetNumber(subNum);
+  }
+
+  public void SetItemNum(int num)
+  {
+    itemButton.SetNumber(num);
   }
 
   public void OnClickMainWeponButton()

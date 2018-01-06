@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleTurnController : MonoBehaviour,IBattleTurn
+public class BattleTurnController : IBattleTurn
 {
   PlayerParam playerParam;
   EnemyParam enemyParam;

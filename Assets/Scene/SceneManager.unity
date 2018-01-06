@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -461,6 +461,120 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &596055416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 596055423}
+  - component: {fileID: 596055422}
+  - component: {fileID: 596055421}
+  - component: {fileID: 596055420}
+  - component: {fileID: 596055419}
+  - component: {fileID: 596055418}
+  - component: {fileID: 596055417}
+  m_Layer: 0
+  m_Name: DataBases
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596055417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60d517439c12404e83e4072ccfa389e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tables: []
+--- !u!114 &596055418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6a951ac88c7546b333074186a67dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tables: []
+--- !u!114 &596055419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa4e90f649ea21469475d3c9eef8d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dungeonDatas: []
+--- !u!114 &596055420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7ec7770b7291d46a228ba25f74a3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorParams:
+  - {fileID: 11400000, guid: c6bff32653493b248a484da8c9347241, type: 2}
+--- !u!114 &596055421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e4ac4f80096714eb1cdac61caac86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weponParams:
+  - {fileID: 11400000, guid: 58be590f3673aa342b369755446c9bdf, type: 2}
+  - {fileID: 11400000, guid: e1c7df65850789e408ff3d370f0d1c8a, type: 2}
+--- !u!114 &596055422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f2258d59116fd4491569dec46e269b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataBaseArray:
+  - {fileID: 596055421}
+  - {fileID: 596055420}
+  - {fileID: 596055419}
+  - {fileID: 596055418}
+  - {fileID: 596055417}
+--- !u!4 &596055423
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -30.998652, y: -2.4409745, z: -1.0715976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620990761
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c1eefed003a4eab8c1d8cc0df31d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initLoadSceneName: Title
+  initLoadSceneName: Game
 --- !u!4 &778675232
 Transform:
   m_ObjectHideFlags: 0

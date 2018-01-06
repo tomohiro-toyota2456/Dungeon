@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerParam : MonoBehaviour
+public class PlayerParam
 {
   PlayerEquipments equipments = new PlayerEquipments();
   int maxHp = GameCommon.PlayerHp;
@@ -16,6 +16,16 @@ public class PlayerParam : MonoBehaviour
 
   public WeponParam.EffectType MainWeponEffectType { get { return equipments.MainWeponEffectType; } }
   public WeponParam.EffectType SubWeponEffectType { get { return equipments.SubWeponEffctType; } }
+
+  public int[] GetEquipmentIds()
+  {
+    return equipments.GetEquipmentIds();
+  }
+
+  public int[] GetEquipmentImageIds()
+  {
+    return equipments.GetEquipmentImageIds();
+  }
 
   public struct ParamData
   {
@@ -43,7 +53,7 @@ public class PlayerParam : MonoBehaviour
     equipments.SetSubWepon(wepon, opt1, opt2, opt3);
   }
 
-  public void SetArmorWepon(ArmorParam armor, EquipmentOptionBase opt1, EquipmentOptionBase opt2, EquipmentOptionBase opt3)
+  public void SetArmor(ArmorParam armor, EquipmentOptionBase opt1, EquipmentOptionBase opt2, EquipmentOptionBase opt3)
   {
     equipments.SetArmor(armor, opt1, opt2, opt3);
   }

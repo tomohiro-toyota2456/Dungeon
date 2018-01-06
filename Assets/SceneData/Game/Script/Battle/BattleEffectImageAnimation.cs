@@ -15,11 +15,12 @@ public class BattleEffectImageAnimation : MonoBehaviour, IBattleEffect
   bool isAnimation;
   bool IBattleEffect.IsAnimation { get { return isAnimation; } }
 
-  void IBattleEffect.PlayAnimation()
+  public void PlayAnimation()
   {
     if (isAnimation)
       return;
 
+    image.gameObject.SetActive(true);
     StartCoroutine(PlayerAnimationCoroutine());
   }
 
@@ -33,10 +34,12 @@ public class BattleEffectImageAnimation : MonoBehaviour, IBattleEffect
     {
       int t = (int)(timer / oneTime) ;
       idx = t % sprites.Length;
+      image.sprite = sprites[idx];
       timer += Time.deltaTime;
       yield return null;
     }
 
     isAnimation = false;
+    image.gameObject.SetActive(false);
   }
 }

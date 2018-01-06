@@ -1,21 +1,17 @@
 ﻿namespace Excel
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using NPOI;
-    using System.IO;
-    using NPOI.HSSF.UserModel;
-    using NPOI.XSSF.UserModel;
-    using NPOI.SS.UserModel;
+  using System.IO;
+  using NPOI.HSSF.UserModel;
+  using NPOI.XSSF.UserModel;
+  using NPOI.SS.UserModel;
 
-    //エクセルのセルの中身を文字列取得するためのスクリプト
-    //xlsx形式はテスト済み
-    //複数シート対応
-    //Open
-    //GetCellData
-    //Close
-    public class ExcelReader
+  //エクセルのセルの中身を文字列取得するためのスクリプト
+  //xlsx形式はテスト済み
+  //複数シート対応
+  //Open
+  //GetCellData
+  //Close
+  public class ExcelReader
     {
         string m_sheetName = null;//取得するシート名
         IWorkbook m_workBook = null;
