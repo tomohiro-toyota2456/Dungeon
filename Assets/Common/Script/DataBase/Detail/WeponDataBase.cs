@@ -19,4 +19,17 @@ public class WeponDataBase : DataBase
 
     return null;
   }
+
+  public WeponParam GetDefaultWepon(WeponParam.WeponType type)
+  {
+    var wepon = ScriptableObject.CreateInstance<WeponParam>();
+    wepon.MinAtk = 1;
+    wepon.MaxAtk = 5;
+    wepon.Id = -1;
+    wepon.ImageId = -1;
+    wepon.Name = "はがねのこぶし";
+    wepon.Durability = 99;
+    wepon.Type = type;
+    return wepon;
+  }
 }

@@ -18,6 +18,8 @@ public class DungeonManager : MonoBehaviour
 
   bool isNextBattle = false;
 
+  public static int DungeonId { private get; set; }
+
 	// Use this for initialization
 	void Start ()
   {
