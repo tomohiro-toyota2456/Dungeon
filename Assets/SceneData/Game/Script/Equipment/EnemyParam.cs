@@ -10,6 +10,7 @@ public class EnemyParam
 
   public int MaxHp { get { return param.MaxHp; } }
   public int CurHp { get { return curHp; } }
+  public string Name { get { return param.name; } }
 
   public void Init(EnemyParamBase param)
   {
@@ -31,5 +32,6 @@ public class EnemyParam
   public void Damage(float damage)
   {
     curHp -= (int)damage;
+    curHp = curHp < 0 ? 0 : curHp;
   }
 }

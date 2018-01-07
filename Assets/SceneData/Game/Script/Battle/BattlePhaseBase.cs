@@ -18,6 +18,12 @@ public abstract class BattlePhaseBase : MonoBehaviour
   protected TextMeshProUGUI enemyNameText;
   [SerializeField]
   protected TextMeshProUGUI playerNameText;
+  [SerializeField]
+  protected MessageWindow messageWindow;
 
   public abstract IEnumerator ExecBattlePhase(PlayerParam playerParam, EnemyParam enemyParam);
+  public virtual void Init()
+  {
+
+  }
 }

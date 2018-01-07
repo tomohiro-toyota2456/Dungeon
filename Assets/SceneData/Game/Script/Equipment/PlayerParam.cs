@@ -81,6 +81,7 @@ public class PlayerParam
   public void Damage(float damage)
   {
     curHp -= (int)damage;
+    curHp = curHp < 0 ? 0 : curHp;
   }
 
 }

@@ -21,6 +21,6 @@ public class GameCommon
   public static float CalcDamage(float atk,float def,float critical)
   {
     float t = critical;
-    return Mathf.Max(atk * t - def + GameCommon.CalcRandomDamage());
+    return Mathf.Max(atk * t - def + GameCommon.CalcRandomDamage(),0);
   }
 }

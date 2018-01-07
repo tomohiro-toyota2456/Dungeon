@@ -9,6 +9,8 @@ public class EnemyParamBase : ScriptableObject
   [SerializeField]
   int imageId;
   [SerializeField]
+  string enemyName;
+  [SerializeField]
   int dropTableId;
   [SerializeField]
   int maxHp;
@@ -23,6 +25,7 @@ public class EnemyParamBase : ScriptableObject
 
   public int Id { get { return id; } set { id = value; } }
   public int ImageId { get { return imageId; } set { imageId = value; } }
+  public string EnemyName { get { return enemyName; } set { enemyName = value; } }
   public int DropTableId { get { return dropTableId; } set { dropTableId = value; } }
   public int MaxHp { get { return maxHp; } set { maxHp = value; } }
   public float MaxAtk { get { return maxAtk; } set { maxAtk = value; } }

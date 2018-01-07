@@ -15,10 +15,20 @@ public class BattleTurnController : IBattleTurn
   public IBattleEffectFactory EffectFactory { set { effectFactory = value; } }
   public IBattleCommand BattleCommand { set { battleCommand = value; } }
 
+  public enum ActionType
+  {
+    Attack,
+    Repair,
+    Escape,
+  }
+
   public struct BattleLog
   {
+    public string actionUserName;
+    public string targetName;
     public int damage;
     public bool isCritical;
+    public ActionType actionType;
   }
 
   BattleLog battleLog;
@@ -26,6 +36,10 @@ public class BattleTurnController : IBattleTurn
 
   IEnumerator IBattleTurn.ExecEnemyTurn()
   {
+    battleLog.actionUserName = enemyParam.Name;
+    battleLog.targetName = "プレイヤー";
+    battleLog.actionType = ActionType.Attack;
+
     PlayerParam.ParamData data = enemyParam.CalcAtk();
     //ダメージ計算
     float critical = GameCommon.CalcCriticalBonus(data.critical);
@@ -41,7 +55,7 @@ public class BattleTurnController : IBattleTurn
 
   IEnumerator IBattleTurn.ExecPlayerTurn()
   {
-    //
+    
     battleCommand.Show();
 
     //入力待ち
@@ -53,6 +67,9 @@ public class BattleTurnController : IBattleTurn
     //数値管理はどこかで一元管理のほうがいい気もする。（ただこのクラスの存在意義が？）
     WeponParam.EffectType eType = WeponParam.EffectType.Slashing;
     PlayerParam.ParamData data = new PlayerParam.ParamData(0,0);
+
+    battleLog.actionUserName = "プレイヤー";
+    battleLog.targetName = enemyParam.Name;
 
     switch(battleCommand.ButtonType)
     {
@@ -68,10 +85,12 @@ public class BattleTurnController : IBattleTurn
 
       case 2://Item
         //
+        battleLog.actionType = ActionType.Repair;
         break;
 
       case 3://Escape
         //
+        battleLog.actionType = ActionType.Escape;
         break;
     }
 
@@ -84,6 +103,7 @@ public class BattleTurnController : IBattleTurn
 
       battleLog.damage = (int)damage;
       battleLog.isCritical = critical != 1;
+      battleLog.actionType = ActionType.Attack;
 
       enemyParam.Damage(damage);
 
