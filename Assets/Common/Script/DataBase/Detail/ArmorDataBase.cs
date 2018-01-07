@@ -19,4 +19,14 @@ public class ArmorDataBase : DataBase
 
     return null;
   }
+
+  public ArmorParam GetDefaultArmor()
+  {
+    var armor = ScriptableObject.CreateInstance<ArmorParam>();
+    armor.Def = 1;
+    armor.Durability = 99;
+    armor.Id = -1;
+    armor.ImageId = -1;
+    return armor;
+  }
 }

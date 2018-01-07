@@ -60,9 +60,27 @@ public class DungeonManager : MonoBehaviour
     yield return wavePhase.ExecWavePhase(1, 2);
     battlePhase.Init();
 
+    messageWindow.SetMessage(enemy.Name + "があらわれた!");
+    yield return new WaitForSeconds(1f);
+
     while (!isNextBattle)
     {
       yield return battlePhase.ExecBattlePhase(player, enemy);
+
+      if(player.EnableUsingCountMainWepon <= 0)
+      {
+        player.SetMainWepon(weponDataBase.GetDefaultWepon( WeponParam.WeponType.Main), null, null, null);
+      }
+
+      if(player.EnableUsingCountSubWepon <= 0)
+      {
+        player.SetSubWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Sub), null, null, null);
+      }
+
+      if(player.EnableUsingCountArmor <= 0)
+      {
+        player.SetArmor(armorDataBase.GetDefaultArmor(), null, null, null);
+      }
 
       if (player.CurHp <= 0)
       {
