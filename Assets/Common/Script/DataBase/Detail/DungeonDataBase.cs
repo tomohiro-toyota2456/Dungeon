@@ -37,4 +37,9 @@ public class DungeonDataBase : DataBase
 
     return shortDatas;
   }
+
+  public void SetData(DungeonData[] datas)
+  {
+    dungeonDatas = datas;
+  }
 }

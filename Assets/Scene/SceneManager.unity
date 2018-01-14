@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 596055422}
   - component: {fileID: 596055421}
   - component: {fileID: 596055420}
+  - component: {fileID: 596055424}
   - component: {fileID: 596055419}
   - component: {fileID: 596055418}
   - component: {fileID: 596055417}
@@ -493,7 +494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60d517439c12404e83e4072ccfa389e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tables: []
+  tables:
+  - {fileID: 11400000, guid: b849b5328972b0b41a0d74c2bb50a172, type: 2}
 --- !u!114 &596055418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,7 +507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad6a951ac88c7546b333074186a67dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tables: []
+  tables:
+  - {fileID: 11400000, guid: eba61628e437bc54bb187c15b2c57f0c, type: 2}
 --- !u!114 &596055419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa4e90f649ea21469475d3c9eef8d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonDatas: []
+  dungeonDatas:
+  - {fileID: 11400000, guid: b9c66e1451e2c3747ba2208cf9902cab, type: 2}
 --- !u!114 &596055420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armorParams:
+  - {fileID: 11400000, guid: bf8fef2283c770041859a47637c9d76e, type: 2}
   - {fileID: 11400000, guid: c6bff32653493b248a484da8c9347241, type: 2}
 --- !u!114 &596055421
 MonoBehaviour:
@@ -543,6 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weponParams:
+  - {fileID: 11400000, guid: 1eb3165d321c1714eb3a44d38105a401, type: 2}
   - {fileID: 11400000, guid: 58be590f3673aa342b369755446c9bdf, type: 2}
   - {fileID: 11400000, guid: e1c7df65850789e408ff3d370f0d1c8a, type: 2}
 --- !u!114 &596055422
@@ -575,6 +581,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &596055424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12fc63c7edd4ed24198be96a0ccf3a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyParams:
+  - {fileID: 11400000, guid: 09564cf9eef44d544aab35eb4e1e23b3, type: 2}
+  - {fileID: 11400000, guid: 4a9bba6024d5c554bb0bf1d3d31ed526, type: 2}
 --- !u!1 &620990761
 GameObject:
   m_ObjectHideFlags: 0

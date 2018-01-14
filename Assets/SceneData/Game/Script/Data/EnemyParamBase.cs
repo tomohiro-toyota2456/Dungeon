@@ -22,6 +22,8 @@ public class EnemyParamBase : ScriptableObject
   float def;
   [SerializeField]
   int critical;
+  [SerializeField]
+  int dropPer;
 
   public int Id { get { return id; } set { id = value; } }
   public int ImageId { get { return imageId; } set { imageId = value; } }
@@ -32,4 +34,5 @@ public class EnemyParamBase : ScriptableObject
   public float MinAtk { get { return minAtk; } set { minAtk = value; } }
   public float Def { get { return def; } set { def = value; } }
   public int Critical { get { return critical; } set { critical = value; } }
+  public int DropPer { get { return dropPer; } set { dropPer = value; } }
 }

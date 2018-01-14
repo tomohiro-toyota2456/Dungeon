@@ -32,4 +32,9 @@ public class WeponDataBase : DataBase
     wepon.Type = type;
     return wepon;
   }
+
+  public void SetData(WeponParam[] param)
+  {
+    weponParams = param;
+  }
 }

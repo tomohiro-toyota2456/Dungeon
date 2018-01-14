@@ -8,14 +8,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a2dc5dd4735314e9427e8fb989c55d, type: 3}
-  m_Name: Wepon1
+  m_Script: {fileID: 11500000, guid: 03fc75290e7318b4999457897a77cbb2, type: 3}
+  m_Name: dropitemtable0
   m_EditorClassIdentifier: 
-  id: 1
-  imageId: 2
-  equipmentName: "\u30C0\u30AC\u30FC"
-  durability: 10
-  minAtk: 8
-  maxAtk: 10
-  etype: 0
-  type: 1
+  id: 0
+  data:
+  - dropType: 0
+    id: 0
+  - dropType: 0
+    id: 1
+  - dropType: 1
+    id: 0
+  - dropType: 1
+    id: 1

@@ -29,4 +29,10 @@ public class ArmorDataBase : DataBase
     armor.ImageId = -1;
     return armor;
   }
+
+  public void SetData(ArmorParam[] data)
+  {
+    armorParams = data;
+  }
+
 }

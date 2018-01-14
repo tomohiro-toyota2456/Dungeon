@@ -19,4 +19,9 @@ public class EnemyPopTableDataBase : DataBase
 
     return null;
   }
+
+  public void SetData(EnemyPopTable[] table)
+  {
+    tables = table;
+  }
 }

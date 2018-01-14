@@ -8,14 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a2dc5dd4735314e9427e8fb989c55d, type: 3}
-  m_Name: Wepon1
+  m_Script: {fileID: 11500000, guid: 67c7fbd049049ed468c6b7cee3791848, type: 3}
+  m_Name: armor0
   m_EditorClassIdentifier: 
-  id: 1
-  imageId: 2
-  equipmentName: "\u30C0\u30AC\u30FC"
+  id: 0
+  imageId: 0
+  equipmentName: "\u30A2\u30FC\u30DE\u30FC"
   durability: 10
-  minAtk: 8
-  maxAtk: 10
-  etype: 0
-  type: 1
+  def: 10

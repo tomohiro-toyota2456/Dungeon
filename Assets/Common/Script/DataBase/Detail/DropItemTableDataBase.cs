@@ -19,4 +19,9 @@ public class DropItemTableDataBase : DataBase
 
     return null;
   }
+
+  public void SetData(DropTable[] tables)
+  {
+    this.tables = tables;
+  }
 }

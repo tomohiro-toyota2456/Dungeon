@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a2dc5dd4735314e9427e8fb989c55d, type: 3}
   m_Name: Wepon2
   m_EditorClassIdentifier: 
-  id: 1
-  imageId: 0
-  equipmentName: 
+  id: 2
+  imageId: 3
+  equipmentName: "\u3053\u3093\u307C\u3046"
   durability: 10
-  minAtk: 1
-  maxAtk: 4
+  minAtk: 10
+  maxAtk: 15
   etype: 1
-  type: 1
+  type: 0

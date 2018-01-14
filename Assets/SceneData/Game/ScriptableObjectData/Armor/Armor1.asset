@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c7fbd049049ed468c6b7cee3791848, type: 3}
   m_Name: Armor1
   m_EditorClassIdentifier: 
-  id: 0
-  imageId: 0
-  equipmentName: 10
-  durability: 0
-  def: 5
+  id: 1
+  imageId: 1
+  equipmentName: "\u3044\u3044\u30A2\u30FC\u30DE\u30FC"
+  durability: 12
+  def: 20

@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a2dc5dd4735314e9427e8fb989c55d, type: 3}
-  m_Name: Wepon1
+  m_Name: wepon0
   m_EditorClassIdentifier: 
-  id: 1
-  imageId: 2
-  equipmentName: "\u30C0\u30AC\u30FC"
-  durability: 10
-  minAtk: 8
-  maxAtk: 10
+  id: 0
+  imageId: 1
+  equipmentName: "\u306A\u307E\u304F\u3089\u30AB\u30BF\u30CA"
+  durability: 5
+  minAtk: 5
+  maxAtk: 15
   etype: 0
-  type: 1
+  type: 0
