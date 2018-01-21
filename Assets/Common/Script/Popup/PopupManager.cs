@@ -9,10 +9,21 @@ public class PopupManager : UnitySingleton<PopupManager>
   Transform root;
   [SerializeField]
   Image guardImage;
+  [SerializeField]
+  PopupSimple popupSimple;
 
   public T CreatePopup<T>(T prefab) where T : PopupBase
   {
     T ins = Instantiate<T>(prefab);
+    ins.transform.SetParent(root);
+    ins.transform.localScale = new Vector3(0, 0, 0);
+    ins.transform.localPosition = new Vector3(0, 0, 0);
+    return ins;
+  }
+
+  public PopupSimple CreateSimplePopup()
+  {
+    PopupSimple ins = Instantiate(popupSimple);
     ins.transform.SetParent(root);
     ins.transform.localScale = new Vector3(0, 0, 0);
     ins.transform.localPosition = new Vector3(0, 0, 0);

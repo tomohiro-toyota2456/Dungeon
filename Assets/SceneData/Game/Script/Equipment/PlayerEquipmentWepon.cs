@@ -74,6 +74,17 @@ public class PlayerEquipmentWepon
     return atk;
   }
 
+  public float CalcMaxAtk()
+  {
+    float atk = wepon.MaxAtk;
+    for (int i = 0; i < options.Length; i++)
+    {
+      atk += options[i] != null ? options[i].Atk : 0;
+    }
+
+    return atk;
+  }
+
   //クリティカル値計算
   public int CalcCritical()
   {

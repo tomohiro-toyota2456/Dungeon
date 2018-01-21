@@ -27,6 +27,7 @@ public class ArmorDataBase : DataBase
     armor.Durability = 99;
     armor.Id = -1;
     armor.ImageId = -1;
+    armor.Name = "ぬののふく";
     return armor;
   }
 

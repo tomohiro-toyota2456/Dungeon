@@ -1480,6 +1480,8 @@ MonoBehaviour:
   wavePhase: {fileID: 196972775}
   battlePhase: {fileID: 1616789900}
   messageWindow: {fileID: 2131979382}
+  equipmentChangePopup: {fileID: 114884213486374292, guid: 0877210591d33294b828332963588767,
+    type: 2}
 --- !u!4 &1616789902
 Transform:
   m_ObjectHideFlags: 0

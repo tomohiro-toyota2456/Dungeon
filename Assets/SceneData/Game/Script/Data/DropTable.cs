@@ -24,4 +24,10 @@ public class DropTable : ScriptableObject
 
   public int Id { get { return id; } set { id = value; } }
   public Data[] DropData { get { return data; } set { data = value; } }
+
+  public Data GetRandom()
+  {
+    int idx = Random.Range(0, data.Length);
+    return data[idx];
+  }
 }

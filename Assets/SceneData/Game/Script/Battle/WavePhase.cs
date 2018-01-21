@@ -29,6 +29,7 @@ public class WavePhase : WavePhaseBase
 
     phaseText.gameObject.SetActive(true);
     numberText.gameObject.SetActive(true);
+    numberText.text = phase.ToString();
 
     bool isAnimation = true;
 

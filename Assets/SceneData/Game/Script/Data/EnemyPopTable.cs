@@ -11,4 +11,10 @@ public class EnemyPopTable : ScriptableObject
 
   public int Id { get { return id; } set { id = value; } }
   public int[] EnemyIds { get { return enemyIds; } set { enemyIds = value; } }
+
+  public int GetRandomId()
+  {
+    int idx = Random.Range(0, enemyIds.Length);
+    return enemyIds[idx];
+  }
 }

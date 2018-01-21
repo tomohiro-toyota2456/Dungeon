@@ -15,6 +15,8 @@ public class BattleTurnController : IBattleTurn
   public IBattleEffectFactory EffectFactory { set { effectFactory = value; } }
   public IBattleCommand BattleCommand { set { battleCommand = value; } }
 
+  string escapeDesc = "逃げると現在の装備のままダンジョンを\n脱出できます。逃げますか?";
+
   public enum ActionType
   {
     Attack,
@@ -115,6 +117,28 @@ public class BattleTurnController : IBattleTurn
       {
         yield return null;
       }
+    }
+
+    //逃走
+    if(battleCommand.ButtonType == 3)
+    {
+      bool isDecision = false;
+      var popup = PopupManager.Instance.CreateSimplePopup();
+      popup.Init("にげますか?", escapeDesc, () =>
+      {
+        ChangeScene.Instance.LoadScene("AreaMap");
+        isDecision = true;
+      },
+      () =>
+      {
+        isDecision = true;
+      }, "はい", "いいえ");
+
+      PopupManager.Instance.Open(popup);
+
+      while (!isDecision)
+        yield return null;
+      
     }
   }
 }

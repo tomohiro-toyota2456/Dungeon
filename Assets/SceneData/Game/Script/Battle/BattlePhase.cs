@@ -43,6 +43,12 @@ public class BattlePhase : BattlePhaseBase
     //入れ替え
     isPlayerTurn = !isPlayerTurn;
 
+    if(battleTurnController.Log.actionType == BattleTurnController.ActionType.Escape)
+    {
+      isPlayerTurn = true;
+      yield break;
+    }
+
     //HP更新
     playerHp.SetNumber(playerParam.CurHp,GameCommon.PlayerHp);
     enemyHp.SetNumber(enemyParam.CurHp,enemyParam.MaxHp);

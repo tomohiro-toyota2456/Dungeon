@@ -210,6 +210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: {fileID: 582182027}
   guardImage: {fileID: 364308317}
+  popupSimple: {fileID: 114594717276745268, guid: a97376b1f87ff3d4ea9bc014f6b0de9b,
+    type: 2}
 --- !u!4 &311910983
 Transform:
   m_ObjectHideFlags: 0
@@ -476,6 +478,7 @@ GameObject:
   - component: {fileID: 596055419}
   - component: {fileID: 596055418}
   - component: {fileID: 596055417}
+  - component: {fileID: 596055425}
   m_Layer: 0
   m_Name: DataBases
   m_TagString: Untagged
@@ -568,6 +571,8 @@ MonoBehaviour:
   - {fileID: 596055419}
   - {fileID: 596055418}
   - {fileID: 596055417}
+  - {fileID: 596055424}
+  - {fileID: 596055425}
 --- !u!4 &596055423
 Transform:
   m_ObjectHideFlags: 0
@@ -595,6 +600,17 @@ MonoBehaviour:
   enemyParams:
   - {fileID: 11400000, guid: 09564cf9eef44d544aab35eb4e1e23b3, type: 2}
   - {fileID: 11400000, guid: 4a9bba6024d5c554bb0bf1d3d31ed526, type: 2}
+--- !u!114 &596055425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788b98f16bbb27a429851922b9d5ebb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &620990761
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &620990762
 RectTransform:
   m_ObjectHideFlags: 0

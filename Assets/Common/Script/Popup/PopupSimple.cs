@@ -15,6 +15,10 @@ public class PopupSimple : PopupBase
   Button buttonA;
   [SerializeField]
   Button buttonB;
+  [SerializeField]
+  TextMeshProUGUI buttonAText;
+  [SerializeField]
+  TextMeshProUGUI buttonBText;
 
   public void Init(string title,string description, string okButtonStr = "OK", Action okAction = null)
   {
@@ -27,6 +31,7 @@ public class PopupSimple : PopupBase
     }
 
     SetText(title, description);
+    SetButtonText(okButtonStr, "");
   }
 
   public void Init(string title, string description, Action yesAction = null, Action noAction = null,string yesButtonStr ="Yes",string noButtonStr = "No")
@@ -45,12 +50,19 @@ public class PopupSimple : PopupBase
     buttonB.onClick.AddListener(() => Close());
 
     SetText(title, description);
+    SetButtonText(yesButtonStr, noButtonStr);
   }
 
   void SetText(string title, string description)
   {
     titleText.text = title;
     descriptionText.text = description;
+  }
+
+  void SetButtonText(string yesButton,string noButton)
+  {
+    buttonAText.text = yesButton;
+    buttonBText.text = noButton;
   }
 
 }

@@ -10,7 +10,10 @@ public class EnemyParam
 
   public int MaxHp { get { return param.MaxHp; } }
   public int CurHp { get { return curHp; } }
-  public string Name { get { return param.name; } }
+  public string Name { get { return param.EnemyName; } }
+  public int DropPer { get { return param.DropPer; } }
+  public int DropTableId { get { return param.DropTableId; } }
+  public EnemyParamBase.EnemyType Type { get { return param.Type; } }
 
   public void Init(EnemyParamBase param)
   {

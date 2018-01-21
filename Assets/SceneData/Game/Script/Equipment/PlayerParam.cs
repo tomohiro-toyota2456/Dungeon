@@ -84,4 +84,29 @@ public class PlayerParam
     curHp = curHp < 0 ? 0 : curHp;
   }
 
+  public int CalcMainWeponCritical()
+  {
+    return equipments.CalcMainWeponCritical();
+  }
+
+  public int CalcSubWeponCritical()
+  {
+    return equipments.CalcSubWeponCritical();
+  }
+
+  public float CalcMainWeponMaxAtk()
+  {
+    return equipments.CalcMainWeponMaxAtk();
+  }
+
+  public float CalcSubWeponMaxAtk()
+  {
+    return equipments.CalcSubWeponMaxAtk();
+  }
+
+  public float CalcArmorDef()
+  {
+    return equipments.CalcDef();
+  }
+
 }

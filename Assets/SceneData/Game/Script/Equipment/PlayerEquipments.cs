@@ -108,4 +108,15 @@ public class PlayerEquipments
   {
     return armor.CalcDef();
   }
+
+  public float CalcMainWeponMaxAtk()
+  {
+    return mainWepon.CalcMaxAtk();
+  }
+
+  public float CalcSubWeponMaxAtk()
+  {
+    return subWepon.CalcMaxAtk();
+  }
+
 }
