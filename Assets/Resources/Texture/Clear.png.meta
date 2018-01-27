@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bbd6a155e2fb14a99bb7f63cd0d0033b
-timeCreated: 1517033704
+timeCreated: 1517034865
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -108,10 +108,10 @@ TextureImporter:
       name: Clear_0
       rect:
         serializedVersion: 2
-        x: 90
-        y: 35
-        width: 181
-        height: 216
+        x: 36
+        y: 12
+        width: 237
+        height: 276
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,10 +122,10 @@ TextureImporter:
       name: Clear_1
       rect:
         serializedVersion: 2
-        x: 324
-        y: 37
-        width: 145
-        height: 204
+        x: 372
+        y: 14
+        width: 194
+        height: 269
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,10 +136,10 @@ TextureImporter:
       name: Clear_2
       rect:
         serializedVersion: 2
-        x: 497
-        y: 27
-        width: 174
-        height: 202
+        x: 652
+        y: 14
+        width: 193
+        height: 271
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: Clear_3
       rect:
         serializedVersion: 2
-        x: 720
+        x: 926
         y: 16
-        width: 165
-        height: 220
+        width: 255
+        height: 267
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,10 +164,10 @@ TextureImporter:
       name: Clear_4
       rect:
         serializedVersion: 2
-        x: 936
-        y: 2
-        width: 159
-        height: 245
+        x: 1270
+        y: 16
+        width: 222
+        height: 268
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
