@@ -10,6 +10,7 @@ using UnityEngine;
  * EquipmentBaseParam
  * 装備Optionの基礎パラメータクラス
  * ********************************************************/
+ [System.Serializable]
 public class EquipmentOptionBase 
 {
   [SerializeField]

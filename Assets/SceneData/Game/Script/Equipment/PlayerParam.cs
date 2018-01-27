@@ -43,6 +43,21 @@ public class PlayerParam
     curHp = maxHp;
   }
 
+  public void SetMainWepon(WeponParam wepon,EquipmentOptionBase[] options)
+  {
+    equipments.SetMainWepon(wepon, options[0], options[1], options[2]);
+  }
+
+  public void SetSubWepon(WeponParam wepon, EquipmentOptionBase[] options)
+  {
+    equipments.SetSubWepon(wepon, options[0], options[1], options[2]);
+  }
+
+  public void SetArmor(ArmorParam armor, EquipmentOptionBase[] options)
+  {
+    equipments.SetArmor(armor, options[0], options[1], options[2]);
+  }
+
   public void SetMainWepon(WeponParam wepon,EquipmentOptionBase opt1, EquipmentOptionBase opt2, EquipmentOptionBase opt3)
   {
     equipments.SetMainWepon(wepon, opt1, opt2, opt3);

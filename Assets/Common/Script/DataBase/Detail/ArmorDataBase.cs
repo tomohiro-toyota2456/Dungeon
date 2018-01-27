@@ -9,6 +9,9 @@ public class ArmorDataBase : DataBase
 
   public ArmorParam Search(int id)
   {
+    if (id == -1)
+      return GetDefaultArmor();
+
     for (int i = 0; i < armorParams.Length; i++)
     {
       if (armorParams[i].Id == id)

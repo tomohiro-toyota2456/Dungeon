@@ -11,6 +11,8 @@ public class DungeonManager : MonoBehaviour
   [SerializeField]
   MessageWindow messageWindow;
   [SerializeField]
+  ClearEffectBase clearEffect;
+  [SerializeField]
   EquipmentChangePopup equipmentChangePopup;//装備変更確認ポップアップ
 
   WeponDataBase weponDataBase;
@@ -43,10 +45,12 @@ public class DungeonManager : MonoBehaviour
     optionDataBase = DataBaseManager.Instance.GetDataBase<OptionDataBase>();
     dropItemTableDataBase = DataBaseManager.Instance.GetDataBase<DropItemTableDataBase>();
 
+    playerData.LoadEquipmentData();
+
     player = new PlayerParam();
-    player.SetMainWepon(weponDataBase.Search(0), null, null, null);
-    player.SetSubWepon(weponDataBase.Search(1), null, null, null);
-    player.SetArmor(armorDataBase.Search(0), null, null, null);
+    player.SetMainWepon(weponDataBase.Search(playerData.MainWepon.id,WeponParam.WeponType.Main),playerData.MainWepon.options);
+    player.SetSubWepon(weponDataBase.Search(playerData.SubWepon.id,WeponParam.WeponType.Sub), playerData.SubWepon.options);
+    player.SetArmor(armorDataBase.Search(playerData.Armor.id),playerData.Armor.options);
     player.Init();
 
     dungeonData = DataBaseManager.Instance.GetDataBase<DungeonDataBase>().Search(0);
@@ -134,16 +138,22 @@ public class DungeonManager : MonoBehaviour
       if (player.EnableUsingCountMainWepon <= 0)
       {
         player.SetMainWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Main), null, null, null);
+        playerData.SetMainWepon(-1, new EquipmentOptionBase[3]);
+        playerData.SaveEquipmentData();
       }
 
       if (player.EnableUsingCountSubWepon <= 0)
       {
         player.SetSubWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Sub), null, null, null);
+        playerData.SetSubWepon(-1, new EquipmentOptionBase[3]);
+        playerData.SaveEquipmentData();
       }
 
       if (player.EnableUsingCountArmor <= 0)
       {
         player.SetArmor(armorDataBase.GetDefaultArmor(), null, null, null);
+        playerData.SetArmor(-1, new EquipmentOptionBase[3]);
+        playerData.SaveEquipmentData();
       }
 
       yield return battlePhase.ExecBattlePhase(player, enemy);
@@ -162,7 +172,7 @@ public class DungeonManager : MonoBehaviour
         var wepon = weponDataBase.Search(data.id);
 
         EquipmentOptionBase[] options = optionDataBase.CalcWeponOption(wepon.MinAtk, 0, wepon.Durability
-          , dungeonData.MinAtkOp, dungeonData.MaxAtkOp, dungeonData.MinCtOp, dungeonData.MaxCtOp, 0, 0);
+          , dungeonData.MinAtkOp, dungeonData.MaxAtkOp, dungeonData.MinCtOp, dungeonData.MaxCtOp,dungeonData.MinDura,dungeonData.MaxDura);
 
         if (wepon.Type == WeponParam.WeponType.Main)
         {
@@ -176,7 +186,12 @@ public class DungeonManager : MonoBehaviour
           yield return popup.WaitDecision();
 
           //装備更新
-
+          if (!popup.IsSelectedNowEquipment)
+          {
+            player.SetMainWepon(wepon, options);
+            playerData.SetMainWepon(data.id, options);
+            playerData.SaveEquipmentData();
+          }
         }
         else
         {
@@ -190,13 +205,18 @@ public class DungeonManager : MonoBehaviour
           yield return popup.WaitDecision();
 
           //装備更新
-
+          if (!popup.IsSelectedNowEquipment)
+          {
+            player.SetSubWepon(wepon, options);
+            playerData.SetSubWepon(data.id, options);
+            playerData.SaveEquipmentData();
+          }
         }
       }
       else if(data.dropType == DropTable.DropType.Armor)
       {
         var armor = armorDataBase.Search(data.id);
-        EquipmentOptionBase[] options = optionDataBase.CalcArmorOption(armor.Def, armor.Durability, dungeonData.MinDefOp, dungeonData.MaxDefOp, 0, 0);
+        EquipmentOptionBase[] options = optionDataBase.CalcArmorOption(armor.Def, armor.Durability, dungeonData.MinDefOp, dungeonData.MaxDefOp, dungeonData.MinDura, dungeonData.MaxDura);
 
         PlayerEquipmentArmor eArmor = new PlayerEquipmentArmor();
         eArmor.Equip(armor, options[0], options[1], options[2]);
@@ -208,11 +228,28 @@ public class DungeonManager : MonoBehaviour
         yield return popup.WaitDecision();
 
         //装備更新
+        if(!popup.IsSelectedNowEquipment)
+        {
+          player.SetArmor(armor, options);
+          playerData.SetArmor(data.id, options);
+          playerData.SaveEquipmentData();
+        }
+      }
 
+      isNextBattle = true;
+
+      if (phase > maxPhase)
+      {
+        isNextBattle = false;
+        yield return clearEffect.PlayEffect();
+
+        yield return new WaitForSeconds(10.0f);
+
+        //戻る
+        ChangeScene.Instance.LoadScene("AreaMap");
       }
 
 
-      isNextBattle = true;
     }
 
   }

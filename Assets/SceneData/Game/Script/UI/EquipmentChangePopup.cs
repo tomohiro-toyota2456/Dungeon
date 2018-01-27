@@ -36,7 +36,7 @@ public class EquipmentChangePopup : PopupBase
   [SerializeField]
   Button decisionButton;
 
-  bool isSelectedNowEquipment;//現在装備選択中
+  bool isSelectedNowEquipment = true;//現在装備選択中
   public bool IsSelectedNowEquipment { get { return isSelectedNowEquipment; } }
 
   bool isDecision = false;
@@ -61,8 +61,8 @@ public class EquipmentChangePopup : PopupBase
 
     button1.onClick.RemoveAllListeners();
     button2.onClick.RemoveAllListeners();
-    button1.onClick.AddListener(OnClickEquipmentButton);
-    button2.onClick.AddListener(OnClickEquipmentButton);
+    button1.onClick.AddListener(()=>OnClickEquipmentButton(true));
+    button2.onClick.AddListener(()=>OnClickEquipmentButton(false));
 
     decisionButton.onClick.RemoveAllListeners();
     decisionButton.onClick.AddListener(OnClickDecisionButton);
@@ -74,9 +74,9 @@ public class EquipmentChangePopup : PopupBase
     paramTitleTextB.text = paramTitleText.text;
   }
 
-  void OnClickEquipmentButton()
+  void OnClickEquipmentButton(bool isNowSelect)
   {
-    isSelectedNowEquipment = !isSelectedNowEquipment;
+    isSelectedNowEquipment = isNowSelect;
     UpdateButtonSprite();
   }
 

@@ -22,6 +22,10 @@ public class DungeonData : ScriptableObject
   int minCtOp;
   [SerializeField]
   int maxCtOp;
+  [SerializeField]
+  int minDura;
+  [SerializeField]
+  int maxDura;
 
   public int Id { get { return id; } set { id = value; } }
   public string DungeonName { get { return dungeonName; } set { dungeonName = value; } }
@@ -32,4 +36,6 @@ public class DungeonData : ScriptableObject
   public int MaxDefOp { get { return maxDefOp; } set { maxDefOp = value; } }
   public int MinCtOp { get { return minCtOp; } set { minCtOp = value; } }
   public int MaxCtOp { get { return maxCtOp; } set { maxCtOp = value; } }
+  public int MinDura { get { return minDura; } set { minDura = value; } }
+  public int MaxDura { get { return maxDura; } set { maxDura = value; } }
 }
