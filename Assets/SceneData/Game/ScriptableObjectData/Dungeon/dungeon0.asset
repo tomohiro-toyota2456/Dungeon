@@ -14,9 +14,11 @@ MonoBehaviour:
   id: 0
   dungeonName: "\u30C0\u30F3\u30B8\u30E7\u30F3\uFF11"
   appearanceTableIds: 0000000000000000
-  minAtkOp: 0
+  minAtkOp: 2
   maxAtkOp: 5
-  minDefOp: 0
+  minDefOp: 2
   maxDefOp: 5
   minCtOp: 1
   maxCtOp: 4
+  minDura: 2
+  maxDura: 10

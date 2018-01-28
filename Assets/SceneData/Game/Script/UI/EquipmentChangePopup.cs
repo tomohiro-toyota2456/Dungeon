@@ -22,6 +22,10 @@ public class EquipmentChangePopup : PopupBase
   TextMeshProUGUI ctTextB;
   [SerializeField]
   TextMeshProUGUI duraTextB;
+  [SerializeField]
+  TextMeshProUGUI nameTextA;
+  [SerializeField]
+  TextMeshProUGUI nameTextB;
 
   [SerializeField]
   Image icon1;
@@ -47,16 +51,19 @@ public class EquipmentChangePopup : PopupBase
   }
 
   //paramは防具なら防御力　武器なら攻撃力を入れる　Aは装備中のもの Bはドロップのものを入れる
-  public void Init(EquipmentType type,int imageIdA,float paramA,int criticalA,int duraParamA,int imageIdB,float paramB,int criticalB,int duraParamB)
+  public void Init(EquipmentType type,int imageIdA,string nameA,float paramA,int criticalA,int duraParamA,int imageIdB,string nameB,float paramB,int criticalB,int duraParamB)
   {
     SetTitleText(type);
     paramText.text = paramA.ToString();
     ctText.text = criticalA.ToString();
     duraText.text = duraParamA.ToString();
+    nameTextA.text = nameA;
+
 
     paramTextB.text = paramB.ToString();
     ctTextB.text = criticalB.ToString();
     duraTextB.text = duraParamB.ToString();
+    nameTextB.text = nameB;
     UpdateButtonSprite();
 
     button1.onClick.RemoveAllListeners();

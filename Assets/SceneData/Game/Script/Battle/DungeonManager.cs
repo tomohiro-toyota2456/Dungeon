@@ -14,6 +14,8 @@ public class DungeonManager : MonoBehaviour
   ClearEffectBase clearEffect;
   [SerializeField]
   EquipmentChangePopup equipmentChangePopup;//装備変更確認ポップアップ
+  [SerializeField]
+  EquipmentPopup equipmentPopup;
 
   WeponDataBase weponDataBase;
   ArmorDataBase armorDataBase;
@@ -179,8 +181,8 @@ public class DungeonManager : MonoBehaviour
           PlayerEquipmentWepon eWepon = new PlayerEquipmentWepon(WeponParam.WeponType.Main);
           eWepon.Equip(wepon, options[0], options[1], options[2]);
 
-          popup.Init(EquipmentChangePopup.EquipmentType.Wepon, player.GetEquipmentImageIds()[0], player.CalcMainWeponMaxAtk(), player.CalcMainWeponCritical(), player.EnableUsingCountMainWepon,
-                     wepon.ImageId, eWepon.CalcMaxAtk(), eWepon.CalcCritical(), eWepon.CalcDurability());
+          popup.Init(EquipmentChangePopup.EquipmentType.Wepon, player.GetEquipmentImageIds()[0],player.MainWeponName, player.CalcMainWeponMaxAtk(), player.CalcMainWeponCritical(), player.EnableUsingCountMainWepon,
+                     wepon.ImageId,wepon.Name,eWepon.CalcMaxAtk(), eWepon.CalcCritical(), eWepon.CalcDurability());
 
           popupmanager.Open(popup);
           yield return popup.WaitDecision();
@@ -198,8 +200,8 @@ public class DungeonManager : MonoBehaviour
           PlayerEquipmentWepon eWepon = new PlayerEquipmentWepon(WeponParam.WeponType.Sub);
           eWepon.Equip(wepon, options[0], options[1], options[2]);
 
-          popup.Init(EquipmentChangePopup.EquipmentType.Wepon, player.GetEquipmentImageIds()[0], player.CalcSubWeponMaxAtk(), player.CalcSubWeponCritical(), player.EnableUsingCountSubWepon,
-                     wepon.ImageId, eWepon.CalcMaxAtk(), eWepon.CalcCritical(), eWepon.CalcDurability());
+          popup.Init(EquipmentChangePopup.EquipmentType.Wepon, player.GetEquipmentImageIds()[0],player.SubWeponName, player.CalcSubWeponMaxAtk(), player.CalcSubWeponCritical(), player.EnableUsingCountSubWepon,
+                     wepon.ImageId,wepon.Name, eWepon.CalcMaxAtk(), eWepon.CalcCritical(), eWepon.CalcDurability());
 
           popupmanager.Open(popup);
           yield return popup.WaitDecision();
@@ -221,8 +223,8 @@ public class DungeonManager : MonoBehaviour
         PlayerEquipmentArmor eArmor = new PlayerEquipmentArmor();
         eArmor.Equip(armor, options[0], options[1], options[2]);
 
-        popup.Init(EquipmentChangePopup.EquipmentType.Armor, player.GetEquipmentImageIds()[2], player.CalcArmorDef(), 0, player.EnableUsingCountArmor,
-          eArmor.ImageId, eArmor.CalcDef(), 0, eArmor.CalcDurability());
+        popup.Init(EquipmentChangePopup.EquipmentType.Armor, player.GetEquipmentImageIds()[2],player.ArmorName, player.CalcArmorDef(), 0, player.EnableUsingCountArmor,
+          eArmor.ImageId,armor.Name,eArmor.CalcDef(), 0, eArmor.CalcDurability());
 
         popupmanager.Open(popup);
         yield return popup.WaitDecision();
@@ -252,5 +254,12 @@ public class DungeonManager : MonoBehaviour
 
     }
 
+  }
+
+  public void OpenEquipmentPopup()
+  {
+    var pp = popupmanager.CreatePopup<EquipmentPopup>(equipmentPopup);
+    pp.Init(player);
+    popupmanager.Open(pp);
   }
 }

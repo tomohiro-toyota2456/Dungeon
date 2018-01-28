@@ -20,6 +20,10 @@ public class PlayerEquipments
   public WeponParam.EffectType MainWeponEffectType { get { return mainWepon.EffectType; } }
   public WeponParam.EffectType SubWeponEffctType { get { return subWepon.EffectType; } }
 
+  public string ArmorName { get { return armor.ArmorName; } }
+  public string MainWeponName { get { return mainWepon.WeponName; } }
+  public string SubWeponName { get { return subWepon.WeponName; } }
+
   public int[] GetEquipmentIds()
   {
     int[] ids = new int[EquipmentNum];
