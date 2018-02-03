@@ -53,6 +53,14 @@ public class PlayerEquipments
     }
   }
 
+  public void ResetEnableUsingCount()
+  {
+    for (int i = 0; i < equipmentUsageCounts.Length; i++)
+    {
+      equipmentUsageCounts[i] = 0;
+    }
+  }
+
   public void SetMainWepon(WeponParam wepon, EquipmentOptionBase opt1, EquipmentOptionBase opt2, EquipmentOptionBase opt3)
   {
     equipmentUsageCounts[0] = 0;

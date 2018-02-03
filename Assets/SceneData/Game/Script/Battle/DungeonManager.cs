@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 public class DungeonManager : MonoBehaviour
 {
@@ -125,9 +126,18 @@ public class DungeonManager : MonoBehaviour
     {
       if (player.CurHp <= 0)
       {
-        //ゲームオーバー
-        isNextBattle = true;
-        break;
+        messageWindow.SetMessage("プレイヤーはしんでしまった");
+        yield return new WaitForSeconds(1.5f);
+
+        yield return Ad();
+
+        //復活しなかったということなので終わる
+        if(player.CurHp <=0)
+        {
+          ChangeScene.Instance.LoadScene("AreaMap");
+          isNextBattle = false;
+          yield break;
+        }
       }
       else if (enemy.CurHp <= 0)
       {
@@ -261,5 +271,33 @@ public class DungeonManager : MonoBehaviour
     var pp = popupmanager.CreatePopup<EquipmentPopup>(equipmentPopup);
     pp.Init(player);
     popupmanager.Open(pp);
+  }
+
+  IEnumerator Ad()
+  {
+    bool isWait = true;
+    if(Advertisement.isShowing)
+    {
+      var simplePopup = popupmanager.CreateSimplePopup();
+      simplePopup.Init("広告を見ると復活できます", "復活時にHPと装備耐久値が全回復します",
+        () =>
+        {
+          advertisement.Instance.ShowAd((result) =>
+          {
+            //全回復処理
+            player.Init();
+            isWait = false;
+          });
+        },
+        () =>
+        {
+          isWait = false;
+        }, "はい", "いいえ");
+
+      popupmanager.Open(simplePopup);
+
+      while (isWait)
+        yield return null;
+    }
   }
 }

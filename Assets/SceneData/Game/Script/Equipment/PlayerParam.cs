@@ -47,6 +47,8 @@ public class PlayerParam
   public void Init()
   {
     curHp = maxHp;
+    equipments.ResetEnableUsingCount();
+    enableUsingCountRepair = GameCommon.EnableRepairNum;
   }
 
   public void SetMainWepon(WeponParam wepon,EquipmentOptionBase[] options)

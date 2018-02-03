@@ -7,7 +7,7 @@ using UnityEngine.Advertisements;
 /// <para>注意！</para>
 /// <para>ServiceのADSで</para> Testmodeになっているか確認する事
 /// </summary>
-public class advertisement : MonoBehaviour {
+public class advertisement : UnitySingleton<advertisement>{
 	/// <summary>
 	/// <para>各種広告ID</para>
 	/// 変更しないで
@@ -31,11 +31,11 @@ public class advertisement : MonoBehaviour {
 		}
 	}
 
-	public void ShowAd()
+	public void ShowAd(System.Action<ShowResult> action)
 	{
 		//コールバック用オプションの作成
 		ShowOptions options = new ShowOptions();
-		options.resultCallback = HandleShowResult;
+    options.resultCallback = action;
 
 		///広告再生準備の確認
 		if (Advertisement.IsReady ()) {
