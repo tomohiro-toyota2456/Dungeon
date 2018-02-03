@@ -24,6 +24,7 @@ public class BattlePhase : BattlePhaseBase
     //コマンドUI更新
     battleCommandUI.SetItemNum(5);
     battleCommandUI.SetWeponNum(playerParam.EnableUsingCountMainWepon, playerParam.EnableUsingCountSubWepon);
+    battleCommandUI.SetItemNum(playerParam.EnableUsingCountRepair);
 
     //ターン処理
     battleTurnController.BattleCommand = battleCommandUI;
@@ -73,7 +74,7 @@ public class BattlePhase : BattlePhaseBase
         break;
 
       case BattleTurnController.ActionType.Repair:
-        
+        strBuilder.Append("全回復した!");
         break;
 
       case BattleTurnController.ActionType.Escape:

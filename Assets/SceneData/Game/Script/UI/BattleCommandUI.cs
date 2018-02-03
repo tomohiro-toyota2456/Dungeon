@@ -43,6 +43,7 @@ public class BattleCommandUI : MonoBehaviour, IBattleCommand
   public void SetItemNum(int num)
   {
     itemButton.SetNumber(num);
+    itemButton.enabled = num > 0;
   }
 
   public void OnClickMainWeponButton()

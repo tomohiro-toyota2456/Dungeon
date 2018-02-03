@@ -7,10 +7,12 @@ public class PlayerParam
   PlayerEquipments equipments = new PlayerEquipments();
   int maxHp = GameCommon.PlayerHp;
   int curHp;
+  int enableUsingCountRepair = GameCommon.EnableRepairNum;
 
   public int EnableUsingCountMainWepon { get { return equipments.enableUsingCountMainWepon; } }
   public int EnableUsingCountSubWepon { get { return equipments.enableUsingCountSubWepon; } }
   public int EnableUsingCountArmor { get { return equipments.enableUsingCountArmor; } }
+  public int EnableUsingCountRepair { get { return enableUsingCountRepair; } }
   public int MaxHp { get { return maxHp; } }
   public int CurHp { get { return curHp; } }
 
@@ -95,6 +97,12 @@ public class PlayerParam
   {
     equipments.UseArmor();
     return equipments.CalcDef();
+  }
+
+  public void UserRepair()
+  {
+    curHp = MaxHp;
+    enableUsingCountRepair--;
   }
 
   public void Damage(float damage)

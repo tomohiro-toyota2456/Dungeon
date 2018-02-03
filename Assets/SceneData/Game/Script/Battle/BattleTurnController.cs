@@ -119,6 +119,12 @@ public class BattleTurnController : IBattleTurn
       }
     }
 
+    //回復
+    if(battleCommand.ButtonType == 2)
+    {
+      playerParam.UserRepair();
+    }
+
     //逃走
     if(battleCommand.ButtonType == 3)
     {
