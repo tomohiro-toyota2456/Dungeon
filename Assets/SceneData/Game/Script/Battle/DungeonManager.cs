@@ -120,6 +120,7 @@ public class DungeonManager : MonoBehaviour
     enemyImage.Init(enemysp);
 
     //フェーズ表示
+    SoundPlayer.Instance.PlaySe(GameMusicCommon.PhaseSEPath);
     yield return wavePhase.ExecWavePhase(phase, maxPhase);
     battlePhase.Init();
 

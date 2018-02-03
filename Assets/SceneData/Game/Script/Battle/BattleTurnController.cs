@@ -122,6 +122,7 @@ public class BattleTurnController : IBattleTurn
     //回復
     if(battleCommand.ButtonType == 2)
     {
+      SoundPlayer.Instance.PlaySe(GameMusicCommon.RepairSEPath);
       playerParam.UserRepair();
     }
 
