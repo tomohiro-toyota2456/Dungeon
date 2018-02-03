@@ -378,6 +378,9 @@ public class DungeonExcelImporter : ExcelImporter
       string maxDefOp = importer.GetCellData(i, 6);
       string minCtOp =  importer.GetCellData(i, 7);
       string maxCtOp =  importer.GetCellData(i, 8);
+      string minDuraOp = importer.GetCellData(i, 9);
+      string maxDuraOp = importer.GetCellData(i, 10);
+      string musicId = importer.GetCellData(i, 11);
 
       DungeonData param = ScriptableObject.CreateInstance<DungeonData>();
       param.DungeonName = name;
@@ -388,6 +391,9 @@ public class DungeonExcelImporter : ExcelImporter
       param.MaxDefOp = int.Parse(maxDefOp);
       param.MinCtOp = int.Parse(minCtOp);
       param.MaxCtOp = int.Parse(maxCtOp);
+      param.MinDuraOp = int.Parse(minDuraOp);
+      param.MaxDuraOp = int.Parse(maxDuraOp);
+      param.MusicId = int.Parse(musicId);
 
       param.AppearanceTableIds = CsvParser.ParseInt(tableids);
 

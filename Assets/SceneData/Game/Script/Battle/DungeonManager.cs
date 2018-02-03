@@ -12,6 +12,8 @@ public class DungeonManager : MonoBehaviour
   [SerializeField]
   MessageWindow messageWindow;
   [SerializeField]
+  EnemyImage enemyImage;
+  [SerializeField]
   ClearEffectBase clearEffect;
   [SerializeField]
   EquipmentChangePopup equipmentChangePopup;//装備変更確認ポップアップ
@@ -26,6 +28,7 @@ public class DungeonManager : MonoBehaviour
   DropItemTableDataBase dropItemTableDataBase;
   
   PlayerParam player;
+  EnemyParam enemy = new EnemyParam();
 
   bool isNextBattle = false;
   PopupManager popupmanager;
@@ -107,20 +110,22 @@ public class DungeonManager : MonoBehaviour
   IEnumerator UpdateCoroutine()
   {
     isNextBattle = false;
-    EnemyParam enemy = new EnemyParam();
-
+  
     //出現エネミー検索
     int tableId = dungeonData.AppearanceTableIds[phase - 1];
     int enemyId = popDataBase.Search(tableId).GetRandomId();
     EnemyParamBase enemyParamBase = enemyDataBase.Search(enemyId);
     enemy.Init(enemyParamBase);
+    Sprite enemysp = ResourceLoader.LoadEnemySprite(enemyId);
+    enemyImage.Init(enemysp);
 
     //フェーズ表示
     yield return wavePhase.ExecWavePhase(phase, maxPhase);
     battlePhase.Init();
 
     messageWindow.SetMessage(enemy.Name + GetAppearanceStr(enemy.Type));
-    yield return new WaitForSeconds(1f);
+    yield return enemyImage.FadeIn(0.5f);
+    yield return new WaitForSeconds(0.5f);
 
     while (!isNextBattle)
     {
@@ -141,8 +146,10 @@ public class DungeonManager : MonoBehaviour
       }
       else if (enemy.CurHp <= 0)
       {
+
         messageWindow.SetMessage(enemy.Name + GetEndStr(enemy.Type));
-        yield return new WaitForSeconds(1.0f);
+        yield return enemyImage.FadeOut(0.5f);
+        yield return new WaitForSeconds(0.5f);
         phase++;
         break;
       }
@@ -184,7 +191,7 @@ public class DungeonManager : MonoBehaviour
         var wepon = weponDataBase.Search(data.id);
 
         EquipmentOptionBase[] options = optionDataBase.CalcWeponOption(wepon.MinAtk, 0, wepon.Durability
-          , dungeonData.MinAtkOp, dungeonData.MaxAtkOp, dungeonData.MinCtOp, dungeonData.MaxCtOp,dungeonData.MinDura,dungeonData.MaxDura);
+          , dungeonData.MinAtkOp, dungeonData.MaxAtkOp, dungeonData.MinCtOp, dungeonData.MaxCtOp,dungeonData.MinDuraOp,dungeonData.MaxDuraOp);
 
         if (wepon.Type == WeponParam.WeponType.Main)
         {
@@ -228,7 +235,7 @@ public class DungeonManager : MonoBehaviour
       else if(data.dropType == DropTable.DropType.Armor)
       {
         var armor = armorDataBase.Search(data.id);
-        EquipmentOptionBase[] options = optionDataBase.CalcArmorOption(armor.Def, armor.Durability, dungeonData.MinDefOp, dungeonData.MaxDefOp, dungeonData.MinDura, dungeonData.MaxDura);
+        EquipmentOptionBase[] options = optionDataBase.CalcArmorOption(armor.Def, armor.Durability, dungeonData.MinDefOp, dungeonData.MaxDefOp, dungeonData.MinDuraOp, dungeonData.MaxDuraOp);
 
         PlayerEquipmentArmor eArmor = new PlayerEquipmentArmor();
         eArmor.Equip(armor, options[0], options[1], options[2]);
@@ -255,7 +262,7 @@ public class DungeonManager : MonoBehaviour
         isNextBattle = false;
         yield return clearEffect.PlayEffect();
 
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(2.0f);
 
         //戻る
         ChangeScene.Instance.LoadScene("AreaMap");
