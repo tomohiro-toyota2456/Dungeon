@@ -31,6 +31,7 @@ public class BattlePhase : BattlePhaseBase
     battleTurnController.EffectFactory = battleEffectFactory;
     battleTurnController.Player = playerParam;
     battleTurnController.Enemy = enemyParam;
+    battleTurnController.DamageEffect = damageEffect;
 
     IBattleTurn turn = battleTurnController;
 

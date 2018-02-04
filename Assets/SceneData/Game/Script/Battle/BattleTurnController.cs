@@ -9,11 +9,13 @@ public class BattleTurnController : IBattleTurn
 
   IBattleEffectFactory effectFactory;
   IBattleCommand battleCommand;
+  IDamageEffect damageEffect;
 
   public PlayerParam Player { set { playerParam = value; } }
   public EnemyParam Enemy { set { enemyParam = value; } }
   public IBattleEffectFactory EffectFactory { set { effectFactory = value; } }
   public IBattleCommand BattleCommand { set { battleCommand = value; } }
+  public IDamageEffect DamageEffect { set { damageEffect = value; } }
 
   string escapeDesc = "逃げると現在の装備のままダンジョンを\n脱出できます。逃げますか?";
 
@@ -51,6 +53,11 @@ public class BattleTurnController : IBattleTurn
     battleLog.isCritical = critical != 1;
 
     playerParam.Damage(damage);
+
+    if(damage != 0)
+    {
+      damageEffect.PlayEffect(1.0f);
+    }
 
     yield return null;
   }

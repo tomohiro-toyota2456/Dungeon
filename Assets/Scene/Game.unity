@@ -742,6 +742,7 @@ GameObject:
   - component: {fileID: 742497072}
   - component: {fileID: 742497074}
   - component: {fileID: 742497073}
+  - component: {fileID: 742497075}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -810,6 +811,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 742497071}
+--- !u!114 &742497075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742497071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91dc179de305b13499399ddf81823131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rect: {fileID: 742497072}
 --- !u!1 &751460703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,6 +2325,7 @@ MonoBehaviour:
   enemyNameText: {fileID: 1989238222}
   playerNameText: {fileID: 2013511216}
   messageWindow: {fileID: 2131979382}
+  damageEffect: {fileID: 742497075}
 --- !u!114 &1616789901
 MonoBehaviour:
   m_ObjectHideFlags: 0
