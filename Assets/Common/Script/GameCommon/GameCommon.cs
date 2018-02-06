@@ -24,4 +24,8 @@ public class GameCommon
     float t = critical;
     return Mathf.Max(atk * t - def + GameCommon.CalcRandomDamage(),0);
   }
+
+  //sound
+  public static readonly string buttonOk = "SE/decision3";
+  public static readonly string buttonCancel = "SE/cancel5";
 }

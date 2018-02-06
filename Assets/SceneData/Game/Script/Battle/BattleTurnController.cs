@@ -53,6 +53,7 @@ public class BattleTurnController : IBattleTurn
     battleLog.isCritical = critical != 1;
 
     playerParam.Damage(damage);
+    SoundPlayer.Instance.PlaySe(GameMusicCommon.GetSEPathFromEffectType(WeponParam.EffectType.Striking));//再生
 
     if(damage != 0)
     {
@@ -119,8 +120,9 @@ public class BattleTurnController : IBattleTurn
       //エフェクト再生
       IBattleEffect effect = null;
       effect = effectFactory.PlayEffect(eType.GetHashCode());
+      SoundPlayer.Instance.PlaySe(GameMusicCommon.GetSEPathFromEffectType(eType));//再生
 
-      while(effect.IsAnimation)
+      while (effect.IsAnimation)
       {
         yield return null;
       }
