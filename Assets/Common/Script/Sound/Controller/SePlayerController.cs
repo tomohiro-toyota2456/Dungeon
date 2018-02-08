@@ -6,6 +6,8 @@ public class SePlayerController : MonoBehaviour, ISePlayer
 {
   [SerializeField]
   int initAudioSourceNum = 3;//初期化で用意するプール
+  [SerializeField]
+  UnityEngine.Audio.AudioMixerGroup mixerGroup;
 
   List<AudioSource> audioSourcePool = new List<AudioSource>();
   Dictionary<string, AudioClip> audioClipDict = new Dictionary<string, AudioClip>();
@@ -14,7 +16,9 @@ public class SePlayerController : MonoBehaviour, ISePlayer
   {
     for(int i = 0; i < initAudioSourceNum; i++)
     {
-      audioSourcePool.Add(gameObject.AddComponent<AudioSource>());
+      var source = gameObject.AddComponent<AudioSource>();
+      source.outputAudioMixerGroup = mixerGroup;
+      audioSourcePool.Add(source);
     }
   }
 
@@ -56,8 +60,9 @@ public class SePlayerController : MonoBehaviour, ISePlayer
         return i;
       }
     }
-
-    audioSourcePool.Add(gameObject.AddComponent<AudioSource>());
+    var source = gameObject.AddComponent<AudioSource>();
+    source.outputAudioMixerGroup = mixerGroup;
+    audioSourcePool.Add(source);
 
     return audioSourcePool.Count - 1;
   }

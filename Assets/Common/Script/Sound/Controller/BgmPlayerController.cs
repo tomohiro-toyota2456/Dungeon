@@ -12,6 +12,8 @@ using UnityEngine;
  * *******************************************************/
 public class BgmPlayerController : MonoBehaviour,IBgmPlayer
 {
+  [SerializeField]
+  UnityEngine.Audio.AudioMixerGroup mixerGroup;
   //クロスフェード用に2つ用意
   AudioSource[] audioSources = new AudioSource[2];
   int fadeOutIdx = -1;
@@ -32,6 +34,9 @@ public class BgmPlayerController : MonoBehaviour,IBgmPlayer
     //アタッチしておく
     audioSources[0] = gameObject.AddComponent<AudioSource>();
     audioSources[1] = gameObject.AddComponent<AudioSource>();
+
+    audioSources[0].outputAudioMixerGroup = mixerGroup;
+    audioSources[1].outputAudioMixerGroup = mixerGroup;
   }
 
   //******************************************************

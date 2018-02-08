@@ -1038,6 +1038,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114921729547350084, guid: a64b14a60fa7ad44a9159770200247ca,
+        type: 2}
+      propertyPath: mixerGroup
+      value: 
+      objectReference: {fileID: 243161212179755924, guid: bc592b3d7b2d4b54990f02b06f3198f7,
+        type: 2}
+    - target: {fileID: 114603167651417296, guid: a64b14a60fa7ad44a9159770200247ca,
+        type: 2}
+      propertyPath: mixerGroup
+      value: 
+      objectReference: {fileID: 243025864202950522, guid: bc592b3d7b2d4b54990f02b06f3198f7,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a64b14a60fa7ad44a9159770200247ca, type: 2}
   m_IsPrefabParent: 0
