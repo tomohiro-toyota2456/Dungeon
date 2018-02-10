@@ -22,4 +22,25 @@ public class VolumeChanger : MonoBehaviour
   {
     audioMixer.SetFloat("SeVolume", value);
   }
+
+  public float GetMasterVolume()
+  {
+    float val = 0;
+    audioMixer.GetFloat("MasterVolume",out val);
+    return val;
+  }
+
+  public float GetBgmVolume()
+  {
+    float val = 0;
+    audioMixer.GetFloat("BgmVolume", out val);
+    return val;
+  }
+
+  public float GetSeVolume()
+  {
+    float val = 0;
+    audioMixer.GetFloat("SeVolume", out val);
+    return val;
+  }
 }
