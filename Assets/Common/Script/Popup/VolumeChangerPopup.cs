@@ -55,4 +55,9 @@ public class VolumeChangerPopup : PopupBase
   {
     return Mathf.Clamp(Mathf.Pow(10, val / 20),0.0001f,1.0f);
   }
+
+  private void OnDestroy()
+  {
+    VolumeSaveData.Instance.SaveVolume(changer.GetMasterVolume(), changer.GetBgmVolume(), changer.GetSeVolume());
+  }
 }
