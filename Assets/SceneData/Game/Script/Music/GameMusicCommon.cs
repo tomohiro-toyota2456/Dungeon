@@ -21,4 +21,18 @@ public class GameMusicCommon
 
     return "";
   }
+
+  public static string GetBgmFromId(int id)
+  {
+    switch(id)
+    {
+      case 0:
+        return "BGM/ElectricG";
+
+      case 1:
+        return "BGM/遺跡への進行";
+    }
+
+    return null;
+  }
 }

@@ -281,22 +281,22 @@ Prefab:
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -4.2007
       objectReference: {fileID: 0}
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 208
+      value: 126.41
       objectReference: {fileID: 0}
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6691177, g: 0.6691177, b: 0.6691177, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2242,7 +2242,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1.4, y: 115.82}
-  m_SizeDelta: {x: 266.8, y: 331.65}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1603822298
 MonoBehaviour:
@@ -2269,14 +2269,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.2965517, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e992ed4ab2a667b479b2c7178bcf19ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2430,17 +2430,17 @@ Prefab:
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 90
+      value: 115.82
       objectReference: {fileID: 0}
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 224909690566197424, guid: 9c76290e6316d9140bd1825e46e12452,
         type: 2}
@@ -3319,6 +3319,36 @@ Prefab:
         type: 2}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148603860104634, guid: da593f066d0ca62428a793eadbe60872,
+        type: 2}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148603860104634, guid: da593f066d0ca62428a793eadbe60872,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148603860104634, guid: da593f066d0ca62428a793eadbe60872,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148603860104634, guid: da593f066d0ca62428a793eadbe60872,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148603860104634, guid: da593f066d0ca62428a793eadbe60872,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148603860104634, guid: da593f066d0ca62428a793eadbe60872,
+        type: 2}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da593f066d0ca62428a793eadbe60872, type: 2}
