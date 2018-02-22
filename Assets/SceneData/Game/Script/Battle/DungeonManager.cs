@@ -63,6 +63,9 @@ public class DungeonManager : MonoBehaviour
     phase = 1;
     maxPhase = dungeonData.AppearanceTableIds.Length;
 
+    //BGM再生
+    SoundPlayer.Instance.PlayBgmCrossFade(GameMusicCommon.GetBgmFromId(dungeonData.MusicId));
+
     popupmanager = PopupManager.Instance;
 
     StartCoroutine(UpdateCoroutine());
@@ -116,7 +119,7 @@ public class DungeonManager : MonoBehaviour
     int enemyId = popDataBase.Search(tableId).GetRandomId();
     EnemyParamBase enemyParamBase = enemyDataBase.Search(enemyId);
     enemy.Init(enemyParamBase);
-    Sprite enemysp = ResourceLoader.LoadEnemySprite(enemyId);
+    Sprite enemysp = ResourceLoader.LoadEnemySprite(enemyParamBase.ImageId);
     enemyImage.Init(enemysp);
 
     //フェーズ表示
@@ -255,21 +258,19 @@ public class DungeonManager : MonoBehaviour
           playerData.SaveEquipmentData();
         }
       }
+    }
 
-      isNextBattle = true;
+    isNextBattle = true;
 
-      if (phase > maxPhase)
-      {
-        isNextBattle = false;
-        yield return clearEffect.PlayEffect();
+    if (phase > maxPhase)
+    {
+      isNextBattle = false;
+      yield return clearEffect.PlayEffect();
 
-        yield return new WaitForSeconds(2.0f);
+      yield return new WaitForSeconds(2.0f);
 
-        //戻る
-        ChangeScene.Instance.LoadScene("AreaMap");
-      }
-
-
+      //戻る
+      ChangeScene.Instance.LoadScene("AreaMap");
     }
 
   }
