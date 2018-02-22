@@ -22,6 +22,9 @@ public class AreaManager : MonoBehaviour {
 			btn.onClick.AddListener(()=>OnClick(DungeonData[index].id));
 		}
 
+    //BGM再生
+    SoundPlayer.Instance.PlayBgmCrossFade(GameMusicCommon.AreaBGMPath);
+
 	}
 	public void OnClick(int id)
 	{

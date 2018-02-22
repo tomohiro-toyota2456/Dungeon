@@ -6,6 +6,7 @@ public class GameMusicCommon
 {
   public static readonly string RepairSEPath = "SE/magic-cure1";
   public static readonly string PhaseSEPath = "SE/dash";
+  public static readonly string AreaBGMPath = "BGM/蛮勇者がゆく";
 
   //エフェクトから音声再生
   public static string GetSEPathFromEffectType(WeponParam.EffectType effectType)
