@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.UI;
 
 public class DungeonManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class DungeonManager : MonoBehaviour
   ClearEffectBase clearEffect;
   [SerializeField]
   EquipmentChangePopup equipmentChangePopup;//装備変更確認ポップアップ
+  [SerializeField]
+  Image bg;
   [SerializeField]
   EquipmentPopup equipmentPopup;
 
@@ -65,6 +68,9 @@ public class DungeonManager : MonoBehaviour
 
     //BGM再生
     SoundPlayer.Instance.PlayBgmCrossFade(GameMusicCommon.GetBgmFromId(dungeonData.MusicId));
+
+    //BGロード
+    bg.sprite = ResourceLoader.LoadDungeonBG(DungeonId);
 
     popupmanager = PopupManager.Instance;
 
