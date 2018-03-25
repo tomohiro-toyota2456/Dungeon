@@ -8,11 +8,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67c7fbd049049ed468c6b7cee3791848, type: 3}
-  m_Name: armor0
+  m_Script: {fileID: 11500000, guid: e71e4fc7cd04d3d449f0d284a3cfd5a6, type: 3}
+  m_Name: enemy2
   m_EditorClassIdentifier: 
-  id: 0
-  imageId: 0
-  equipmentName: "\u30DC\u30ED\u30A2\u30FC\u30DE\u30FC"
-  durability: 5
+  id: 2
+  imageId: 2
+  enemyName: "\u30D6\u30EB\u30FC\u30B8\u30A7\u30EB"
+  dropTableId: 0
+  maxHp: 15
+  maxAtk: 7
+  minAtk: 3
   def: 2
+  critical: 10
+  dropPer: 20
+  enemyType: 0

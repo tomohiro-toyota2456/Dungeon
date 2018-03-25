@@ -499,6 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tables:
   - {fileID: 11400000, guid: b849b5328972b0b41a0d74c2bb50a172, type: 2}
+  - {fileID: 11400000, guid: 5dad9a90f7d03734a82ca55c8b12ca54, type: 2}
 --- !u!114 &596055418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +555,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1eb3165d321c1714eb3a44d38105a401, type: 2}
   - {fileID: 11400000, guid: 58be590f3673aa342b369755446c9bdf, type: 2}
   - {fileID: 11400000, guid: e1c7df65850789e408ff3d370f0d1c8a, type: 2}
+  - {fileID: 11400000, guid: cf9013020b4d7fd44b3ef64fd0eea448, type: 2}
 --- !u!114 &596055422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,6 +602,10 @@ MonoBehaviour:
   enemyParams:
   - {fileID: 11400000, guid: 09564cf9eef44d544aab35eb4e1e23b3, type: 2}
   - {fileID: 11400000, guid: 4a9bba6024d5c554bb0bf1d3d31ed526, type: 2}
+  - {fileID: 11400000, guid: 6912fd59067d86141b1322f11356d9ee, type: 2}
+  - {fileID: 11400000, guid: dd19cd35cdfb24e4b9ff33db50487f2e, type: 2}
+  - {fileID: 11400000, guid: 683f2467951e81e45bc20c67b0dbb4b9, type: 2}
+  - {fileID: 11400000, guid: d11fcf92059aa954db5f2d9b7f1436d9, type: 2}
 --- !u!114 &596055425
 MonoBehaviour:
   m_ObjectHideFlags: 0

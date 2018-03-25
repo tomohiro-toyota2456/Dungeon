@@ -40,9 +40,10 @@ public class WeponDataBase : DataBase
   {
     var wepon = ScriptableObject.CreateInstance<WeponParam>();
     wepon.MinAtk = 1;
-    wepon.MaxAtk = 100;
+    wepon.MaxAtk = 6;
     wepon.Id = -1;
     wepon.ImageId = -1;
+    wepon.Critical = 5;
     wepon.Name = "はがねのこぶし";
     wepon.Durability = 99;
     wepon.Type = type;

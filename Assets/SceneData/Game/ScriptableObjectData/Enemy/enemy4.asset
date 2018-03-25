@@ -8,15 +8,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a2dc5dd4735314e9427e8fb989c55d, type: 3}
-  m_Name: Wepon1
+  m_Script: {fileID: 11500000, guid: e71e4fc7cd04d3d449f0d284a3cfd5a6, type: 3}
+  m_Name: enemy4
   m_EditorClassIdentifier: 
-  id: 1
-  imageId: 2
-  equipmentName: "\u30C0\u30AC\u30FC"
-  durability: 10
+  id: 4
+  imageId: 4
+  enemyName: "\u3048\u3093\u3055\u306E\u3061\u3087\u3046"
+  dropTableId: 0
+  maxHp: 15
+  maxAtk: 20
   minAtk: 1
-  maxAtk: 8
-  critical: 30
-  etype: 0
-  type: 1
+  def: 0
+  critical: 50
+  dropPer: 20
+  enemyType: 0

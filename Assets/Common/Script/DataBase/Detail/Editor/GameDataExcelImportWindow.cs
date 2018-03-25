@@ -94,9 +94,10 @@ public class WeponExcelImpoter : ExcelImporter
       string minAtk = importer.GetCellData(i, 2);
       string maxAtk = importer.GetCellData(i, 3);
       string dura =   importer.GetCellData(i, 4);
-      string eType =  importer.GetCellData(i, 5);
-      string wType =  importer.GetCellData(i, 6);
-      string imageId =importer.GetCellData(i, 7);
+      string cri = importer.GetCellData(i, 5);
+      string eType =  importer.GetCellData(i, 6);
+      string wType =  importer.GetCellData(i, 7);
+      string imageId =importer.GetCellData(i, 8);
 
       WeponParam param = ScriptableObject.CreateInstance<WeponParam>();
       param.Id = int.Parse(id);
@@ -104,6 +105,7 @@ public class WeponExcelImpoter : ExcelImporter
       param.MinAtk = float.Parse(minAtk);
       param.MaxAtk = float.Parse(maxAtk);
       param.Durability = int.Parse(dura);
+      param.Critical = int.Parse(cri);
       param.eType = (WeponParam.EffectType)System.Enum.Parse(typeof(WeponParam.EffectType), eType);
       param.Type = (WeponParam.WeponType)System.Enum.Parse(typeof(WeponParam.WeponType), wType);
       param.ImageId = int.Parse(imageId);

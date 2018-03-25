@@ -89,7 +89,7 @@ public class PlayerEquipmentWepon
   //クリティカル値計算
   public int CalcCritical()
   {
-    int cri = 0;
+    int cri = wepon.Critical;
     for (int i = 0; i < options.Length; i++)
     {
       cri += options[i] != null ? options[i].Critical : 0;

@@ -151,6 +151,13 @@ public class DungeonManager : MonoBehaviour
         {
           ChangeScene.Instance.LoadScene("AreaMap");
           isNextBattle = false;
+
+          //初期装備でセーブ 死亡時全損
+          playerData.SetMainWepon(-1, new EquipmentOptionBase[3]);
+          playerData.SetSubWepon(-1, new EquipmentOptionBase[3]);
+          playerData.SetArmor(-1, new EquipmentOptionBase[3]);
+          playerData.SaveEquipmentData();
+
           yield break;
         }
       }
@@ -160,29 +167,36 @@ public class DungeonManager : MonoBehaviour
         messageWindow.SetMessage(enemy.Name + GetEndStr(enemy.Type));
         yield return enemyImage.FadeOut(0.5f);
         yield return new WaitForSeconds(0.5f);
+
         phase++;
         break;
       }
 
       if (player.EnableUsingCountMainWepon <= 0)
       {
+        messageWindow.SetMessage(player.MainWeponName + "はこわれた!");
         player.SetMainWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Main), null, null, null);
         playerData.SetMainWepon(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
+        yield return new WaitForSeconds(0.5f);
       }
 
       if (player.EnableUsingCountSubWepon <= 0)
       {
+        messageWindow.SetMessage(player.SubWeponName + "はこわれた!");
         player.SetSubWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Sub), null, null, null);
         playerData.SetSubWepon(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
+        yield return new WaitForSeconds(0.5f);
       }
 
       if (player.EnableUsingCountArmor <= 0)
       {
+        messageWindow.SetMessage(player.ArmorName + "はこわれた!");
         player.SetArmor(armorDataBase.GetDefaultArmor(), null, null, null);
         playerData.SetArmor(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
+        yield return new WaitForSeconds(0.5f);
       }
 
       yield return battlePhase.ExecBattlePhase(player, enemy);
@@ -191,6 +205,9 @@ public class DungeonManager : MonoBehaviour
     //ドロップ抽選
     if (Random.Range(0, 100) < enemy.DropPer)
     {
+      //SE再生
+      SoundPlayer.Instance.PlaySe(GameMusicCommon.GettingEquipmentSEPath);
+
       var popup = popupmanager.CreatePopup<EquipmentChangePopup>(equipmentChangePopup);
       int dropTableId = enemy.DropTableId;
       var table = dropItemTableDataBase.Search(dropTableId);
