@@ -7,6 +7,7 @@ public class GameMusicCommon
   public static readonly string RepairSEPath = "SE/magic-cure1";
   public static readonly string PhaseSEPath = "SE/dash";
   public static readonly string AreaBGMPath = "BGM/蛮勇者がゆく";
+  public static readonly string BossBgmPath = "BGM/震える指先";
   public static readonly string GettingEquipmentSEPath = "SE/door-open1";
 
   //エフェクトから音声再生

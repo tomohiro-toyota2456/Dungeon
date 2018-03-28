@@ -29,6 +29,11 @@ public static class CsvParser
 
   public static int[] ParseInt(string csv)
   {
+    if(string.IsNullOrEmpty(csv))
+    {
+      return null;
+    }
+
     List<string> list = new List<string>();
 
     int stIdx = 0;

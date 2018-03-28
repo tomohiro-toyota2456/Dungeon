@@ -2540,6 +2540,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114695181618943862, guid: 9c76290e6316d9140bd1825e46e12452,
+        type: 2}
+      propertyPath: animationTime
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c76290e6316d9140bd1825e46e12452, type: 2}
   m_IsPrefabParent: 0

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb9c8aa131bed549bd0b8b5746d60f3, type: 3}
+  m_Name: dungeon1
+  m_EditorClassIdentifier: 
+  id: 1
+  dungeonName: "\u30C0\u30F3\u30B8\u30E7\u30F32"
+  appearanceTableIds: 0400000005000000060000000600000006000000060000000600000007000000070000000a000000070000000700000008000000080000000a000000080000000a000000090000000b0000000b000000090000000c000000
+  minAtkOp: -2
+  maxAtkOp: 7
+  minDefOp: -1
+  maxDefOp: 7
+  minCtOp: -5
+  maxCtOp: 10
+  minDura: -2
+  maxDura: 15
+  musicId: 0

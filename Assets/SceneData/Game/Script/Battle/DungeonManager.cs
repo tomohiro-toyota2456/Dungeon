@@ -62,7 +62,7 @@ public class DungeonManager : MonoBehaviour
     player.SetArmor(armorDataBase.Search(playerData.Armor.id),playerData.Armor.options);
     player.Init();
 
-    dungeonData = DataBaseManager.Instance.GetDataBase<DungeonDataBase>().Search(0);
+    dungeonData = DataBaseManager.Instance.GetDataBase<DungeonDataBase>().Search(DungeonId);
     phase = 1;
     maxPhase = dungeonData.AppearanceTableIds.Length;
 
@@ -130,6 +130,11 @@ public class DungeonManager : MonoBehaviour
 
     //フェーズ表示
     SoundPlayer.Instance.PlaySe(GameMusicCommon.PhaseSEPath);
+
+    //ラストフェーズの場合ボスBGMに変更
+    if (phase == maxPhase)
+      SoundPlayer.Instance.PlayBgmCrossFade(GameMusicCommon.BossBgmPath);
+
     yield return wavePhase.ExecWavePhase(phase, maxPhase);
     battlePhase.Init();
 

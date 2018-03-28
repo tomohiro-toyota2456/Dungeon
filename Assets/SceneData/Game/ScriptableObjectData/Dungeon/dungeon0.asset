@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   dungeonName: "\u30C0\u30F3\u30B8\u30E7\u30F3\uFF11"
-  appearanceTableIds: 00000000000000000000000000000000000000000000000000000000000000000000000001000000
-  minAtkOp: 2
+  appearanceTableIds: 00000000000000000000000000000000010000000100000001000000020000000200000003000000
+  minAtkOp: 0
   maxAtkOp: 5
-  minDefOp: 2
+  minDefOp: 0
   maxDefOp: 5
   minCtOp: 1
   maxCtOp: 4
-  minDura: 2
+  minDura: 0
   maxDura: 10
-  musicId: 1
+  musicId: 0

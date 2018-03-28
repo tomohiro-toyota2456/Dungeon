@@ -314,20 +314,26 @@ public class ItemDropExcelImpoter : ExcelImporter
       DropTable param = ScriptableObject.CreateInstance<DropTable>();
 
       List<DropTable.Data> dlist = new List<DropTable.Data>();
-      for(int j = 0; j < weponIds.Length; j++)
+      if (weponIds != null)
       {
-        DropTable.Data d = new DropTable.Data();
-        d.id = weponIds[j];
-        d.dropType = DropTable.DropType.Wepon;
-        dlist.Add(d);
+        for (int j = 0; j < weponIds.Length; j++)
+        {
+          DropTable.Data d = new DropTable.Data();
+          d.id = weponIds[j];
+          d.dropType = DropTable.DropType.Wepon;
+          dlist.Add(d);
+        }
       }
 
-      for (int j = 0; j < armorIds.Length; j++)
+      if (armorIds != null)
       {
-        DropTable.Data d = new DropTable.Data();
-        d.id = armorIds[j];
-        d.dropType = DropTable.DropType.Armor;
-        dlist.Add(d);
+        for (int j = 0; j < armorIds.Length; j++)
+        {
+          DropTable.Data d = new DropTable.Data();
+          d.id = armorIds[j];
+          d.dropType = DropTable.DropType.Armor;
+          dlist.Add(d);
+        }
       }
 
       param.Id = int.Parse(id);
