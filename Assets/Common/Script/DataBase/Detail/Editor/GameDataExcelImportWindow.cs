@@ -210,6 +210,7 @@ public class EnemyExcelImpoter : ExcelImporter
       string dropTableId = importer.GetCellData(i, 7);
       string imageId =     importer.GetCellData(i, 8);
       string drop =        importer.GetCellData(i, 9);
+      string etype       = importer.GetCellData(i, 10);
 
       EnemyParamBase param = ScriptableObject.CreateInstance<EnemyParamBase>();
       param.Id = int.Parse(id);
@@ -222,6 +223,7 @@ public class EnemyExcelImpoter : ExcelImporter
       param.DropTableId = int.Parse(dropTableId);
       param.ImageId = int.Parse(imageId);
       param.DropPer = int.Parse(drop);
+      param.Type = (EnemyParamBase.EnemyType)System.Enum.Parse(typeof(EnemyParamBase.EnemyType), etype);
 
       AssetDatabase.CreateAsset(param, "Assets/SceneData/Game/ScriptableObjectData/Enemy/enemy" + id + ".asset");
       list.Add(param);

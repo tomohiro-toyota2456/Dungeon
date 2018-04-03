@@ -21,4 +21,4 @@ MonoBehaviour:
   def: 0
   critical: 0
   dropPer: 100
-  enemyType: 0
+  enemyType: 1
