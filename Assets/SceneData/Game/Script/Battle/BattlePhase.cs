@@ -24,6 +24,7 @@ public class BattlePhase : BattlePhaseBase
     //コマンドUI更新
     battleCommandUI.SetItemNum(5);
     battleCommandUI.SetWeponNum(playerParam.EnableUsingCountMainWepon, playerParam.EnableUsingCountSubWepon);
+    battleCommandUI.SetArmorNum(playerParam.EnableUsingCountArmor);
     battleCommandUI.SetItemNum(playerParam.EnableUsingCountRepair);
 
     //ターン処理

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BattleCommandUI : MonoBehaviour, IBattleCommand
 {
@@ -13,6 +14,8 @@ public class BattleCommandUI : MonoBehaviour, IBattleCommand
   BattleCommandButton itemButton;
   [SerializeField]
   BattleCommandButton escapeButton;
+  [SerializeField]
+  TextMeshProUGUI armorNumText;
   [SerializeField]
   GameObject root;
 
@@ -38,6 +41,11 @@ public class BattleCommandUI : MonoBehaviour, IBattleCommand
   {
     mainWeponButton.SetNumber(mainNum);
     subWeponButton.SetNumber(subNum);
+  }
+
+  public void SetArmorNum(int num)
+  {
+    armorNumText.text = "x" + num.ToString();
   }
 
   public void SetItemNum(int num)
