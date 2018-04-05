@@ -29,7 +29,7 @@ public class ArmorDataBase : DataBase
     armor.Def = 1;
     armor.Durability = 99;
     armor.Id = -1;
-    armor.ImageId = -1;
+    armor.ImageId = 0;
     armor.Name = "ぬののふく";
     return armor;
   }

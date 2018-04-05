@@ -31,6 +31,12 @@ public class EquipmentPopup : PopupBase
   [SerializeField]
   TextMeshProUGUI armorDuraText;
   [SerializeField]
+  Image mainWeponIcon;
+  [SerializeField]
+  Image subWeponIcon;
+  [SerializeField]
+  Image armorIcon;
+  [SerializeField]
   Button okButton;
 
   private void Start()
@@ -47,6 +53,12 @@ public class EquipmentPopup : PopupBase
     mainWeponNameText.text = playerParam.MainWeponName;
     subWeponNameText.text  = playerParam.SubWeponName;
     armorNameText.text     = playerParam.ArmorName;
+
+    int[] imageIds = playerParam.GetEquipmentImageIds();
+
+    mainWeponIcon.sprite = ResourceLoader.LoadWeponIcon(imageIds[0]);
+    subWeponIcon.sprite =  ResourceLoader.LoadWeponIcon(imageIds[1]);
+    armorIcon.sprite =     ResourceLoader.LoadArmorIcon(imageIds[2]);
   }
 
   public void Init(PlayerEquipmentWepon main,PlayerEquipmentWepon sub,PlayerEquipmentArmor armor)
@@ -58,6 +70,11 @@ public class EquipmentPopup : PopupBase
     mainWeponNameText.text = main.WeponName;
     subWeponNameText.text  = sub.WeponName;
     armorNameText.text     = armor.ArmorName;
+
+    mainWeponIcon.sprite = ResourceLoader.LoadWeponIcon(main.ImageId);
+    subWeponIcon.sprite = ResourceLoader.LoadWeponIcon(sub.ImageId);
+    armorIcon.sprite = ResourceLoader.LoadArmorIcon(armor.ImageId);
+
   }
 
   void SetMainWeponParam(float atk,int critical,int dura)

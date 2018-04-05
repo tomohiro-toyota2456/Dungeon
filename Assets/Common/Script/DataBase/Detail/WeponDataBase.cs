@@ -47,6 +47,7 @@ public class WeponDataBase : DataBase
     wepon.Name = "はがねのこぶし";
     wepon.Durability = 99;
     wepon.Type = type;
+    wepon.ImageId = 1;
     return wepon;
   }
 

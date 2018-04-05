@@ -58,12 +58,15 @@ public class EquipmentChangePopup : PopupBase
     ctText.text = criticalA.ToString();
     duraText.text = duraParamA.ToString();
     nameTextA.text = nameA;
+    icon1.sprite = LoadIcon(type,imageIdA);
 
 
     paramTextB.text = paramB.ToString();
     ctTextB.text = criticalB.ToString();
     duraTextB.text = duraParamB.ToString();
     nameTextB.text = nameB;
+    icon2.sprite = LoadIcon(type, imageIdB);
+
     UpdateButtonSprite();
 
     button1.onClick.RemoveAllListeners();
@@ -97,6 +100,11 @@ public class EquipmentChangePopup : PopupBase
   {
     isDecision = true;
     Close();
+  }
+
+  Sprite LoadIcon(EquipmentType type,int id)
+  {
+    return type == EquipmentType.Wepon ? ResourceLoader.LoadWeponIcon(id) : ResourceLoader.LoadArmorIcon(id);
   }
 
   public IEnumerator WaitDecision()
