@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
+using TMPro;
 
 public class DungeonManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class DungeonManager : MonoBehaviour
   EquipmentChangePopup equipmentChangePopup;//装備変更確認ポップアップ
   [SerializeField]
   Image bg;
+  [SerializeField]
+  TextMeshProUGUI phaseNumText;
   [SerializeField]
   EquipmentPopup equipmentPopup;
 
@@ -134,6 +137,10 @@ public class DungeonManager : MonoBehaviour
     //ラストフェーズの場合ボスBGMに変更
     if (phase == maxPhase)
       SoundPlayer.Instance.PlayBgmCrossFade(GameMusicCommon.BossBgmPath);
+
+
+    //表示フェーズ更新
+    phaseNumText.text = phase.ToString() + "/" + maxPhase.ToString();
 
     yield return wavePhase.ExecWavePhase(phase, maxPhase);
     battlePhase.Init();
