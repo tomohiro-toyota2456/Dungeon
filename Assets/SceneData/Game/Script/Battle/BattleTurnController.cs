@@ -68,6 +68,15 @@ public class BattleTurnController : IBattleTurn
     
     battleCommand.Show();
 
+    //チュートリアル終わってなければ表示させる
+    //バトルコマンドチュートリアル
+    if(!TutorialManager.Instance.IsFinishedBattleCommandTutorial())
+    {
+      yield return TutorialManager.Instance.StartBattleCommandTutorial();
+
+      TutorialManager.Instance.SaveFinishedCommandTutorialFlag();
+    }
+
     //入力待ち
     yield return battleCommand.Command();
 

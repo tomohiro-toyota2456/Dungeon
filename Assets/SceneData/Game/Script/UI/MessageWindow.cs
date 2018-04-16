@@ -11,6 +11,8 @@ public class MessageWindow : MonoBehaviour
   [SerializeField]
   GameObject messageWindow;//ベース部分　ここを消すとすべて消えるような構成にする
 
+  bool isTouch = false;//タッチ判定用
+
   public void Show()
   {
     messageWindow.SetActive(true);
@@ -45,6 +47,28 @@ public class MessageWindow : MonoBehaviour
     }
 
     messageText.maxVisibleCharacters = str.Length;
+  }
+
+  //EventTrriger用　わざわざアタッチさせる方式にしたのは使わない場合にも
+  //判定させないほうが良いと感じたため
+  public void TouchTrigger()
+  {
+    isTouch = true;
+  }
+
+  //タッチ判定用コルーチン　引数に0以上をいれると時間で強制true扱いとなる
+  public IEnumerator JudgeTouch(float forceTrueTime = -1f)
+  {
+    isTouch = false;
+
+    float time = 0;
+    while(!isTouch || time >= forceTrueTime)
+    {
+      time += Time.deltaTime;
+      yield return null;
+    }
+
+    isTouch = false;
   }
 
 }
