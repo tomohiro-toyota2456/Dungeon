@@ -1423,11 +1423,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1635,6 +1635,7 @@ MonoBehaviour:
   messageWindow: {fileID: 369621616}
   battleCommandTutorial: {fileID: 11400000, guid: 7d11914142df2504aad3d85934eae1d2,
     type: 2}
+  dropTutorial: {fileID: 11400000, guid: 849976b3e44aa84468f2499e7af6d248, type: 2}
   blockImage: {fileID: 412081881}
 --- !u!114 &1994425268
 MonoBehaviour:

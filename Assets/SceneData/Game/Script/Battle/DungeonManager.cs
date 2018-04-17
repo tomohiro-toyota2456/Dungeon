@@ -217,6 +217,14 @@ public class DungeonManager : MonoBehaviour
     //ドロップ抽選
     if (Random.Range(0, 100) < enemy.DropPer)
     {
+      //チュートリアル判定
+      if(!TutorialManager.Instance.IsFinishedDropTutorial())
+      {
+        yield return TutorialManager.Instance.StartDropTutorial();
+
+        TutorialManager.Instance.SaveFinishedDropTutorialFlag();
+      }
+
       //SE再生
       SoundPlayer.Instance.PlaySe(GameMusicCommon.GettingEquipmentSEPath);
 
