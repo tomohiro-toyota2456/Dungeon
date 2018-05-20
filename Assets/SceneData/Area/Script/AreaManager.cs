@@ -31,5 +31,10 @@ public class AreaManager : MonoBehaviour {
 		DungeonManager.DungeonId = id;
 		ChangeScene.Instance.LoadScene ("Game");
 	}
-		
+
+  public void Test()
+  {
+    advertisement.Instance.ShowAD2();
+  }
+
 }

@@ -44,6 +44,11 @@ public class advertisement : UnitySingleton<advertisement>{
 		}
 	}
 
+  public void ShowAD2()
+  {
+    Advertisement.Show();
+  }
+
 	public void HandleShowResult (ShowResult result)
 	{
 		switch (result)
