@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c1eefed003a4eab8c1d8cc0df31d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initLoadSceneName: AreaMap
+  initLoadSceneName: Title
 --- !u!4 &778675232
 Transform:
   m_ObjectHideFlags: 0

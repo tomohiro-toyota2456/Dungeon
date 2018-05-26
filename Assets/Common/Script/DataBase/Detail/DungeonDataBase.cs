@@ -31,8 +31,11 @@ public class DungeonDataBase : DataBase
     ShortData[] shortDatas = new ShortData[4];//ダミー
     for(int i = 0; i < shortDatas.Length; i++)
     {
-      shortDatas[i].id = i;
-      shortDatas[i].name = "ダンジョン" + i.ToString();
+      if(i < dungeonDatas.Length )
+      {
+        shortDatas[i].id = dungeonDatas[i].Id;
+        shortDatas[i].name = dungeonDatas[i].DungeonName;
+      }
     }
 
     return shortDatas;

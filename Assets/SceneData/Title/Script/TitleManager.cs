@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class TitleManager : MonoBehaviour
 {
-  [SerializeField]
-  PopupSimple simple;
-
-  public void OpenTest()
+  public void MoveAreaMap()
   {
-    var a = PopupManager.Instance.CreatePopup<PopupSimple>(simple);
-    a.Init("a", "s","OK");
-    a.Open();
+    ChangeScene.Instance.LoadScene("AreaMap");
   }
 }
