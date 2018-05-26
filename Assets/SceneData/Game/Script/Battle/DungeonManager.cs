@@ -328,7 +328,7 @@ public class DungeonManager : MonoBehaviour
   IEnumerator Ad()
   {
     bool isWait = true;
-    if(Advertisement.isShowing | true)
+    if(Advertisement.isSupported)
     {
       var simplePopup = popupmanager.CreateSimplePopup();
       simplePopup.Init("広告を見ると復活できます", "復活時にHPと装備耐久値が全回復します",
