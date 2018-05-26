@@ -10,7 +10,7 @@ public class GameCommon
   public static readonly int baseCritical = 0;
   public static float CalcRandomDamage()
   {
-    return Random.Range(0, 5.0f);
+    return Random.Range(0, 2.0f);
   }
 
   public static float CalcCriticalBonus(int addCriticalPoint)
@@ -22,7 +22,8 @@ public class GameCommon
   public static float CalcDamage(float atk,float def,float critical)
   {
     float t = critical;
-    return Mathf.Max(atk * t - def + GameCommon.CalcRandomDamage(),0);
+    float damage = atk *t - def;
+    return damage <= 0 ? CalcRandomDamage() : damage; 
   }
 
   //sound
