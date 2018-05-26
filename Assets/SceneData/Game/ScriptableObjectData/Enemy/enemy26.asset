@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71e4fc7cd04d3d449f0d284a3cfd5a6, type: 3}
+  m_Name: enemy26
+  m_EditorClassIdentifier: 
+  id: 26
+  imageId: 26
+  enemyName: "\u30D1\u30E9\u30B5\u30A4\u30C8\u30B7\u30E3\u30FC\u30AF"
+  dropTableId: 8
+  maxHp: 40
+  maxAtk: 34
+  minAtk: 30
+  def: 28
+  critical: 10
+  dropPer: 30
+  enemyType: 0

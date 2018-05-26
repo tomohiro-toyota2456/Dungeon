@@ -15,10 +15,10 @@ MonoBehaviour:
   imageId: 2
   enemyName: "\u30D6\u30EB\u30FC\u30B8\u30A7\u30EB"
   dropTableId: 0
-  maxHp: 15
-  maxAtk: 7
-  minAtk: 3
-  def: 2
+  maxHp: 6
+  maxAtk: 4
+  minAtk: 2
+  def: 1
   critical: 10
-  dropPer: 60
+  dropPer: 80
   enemyType: 0

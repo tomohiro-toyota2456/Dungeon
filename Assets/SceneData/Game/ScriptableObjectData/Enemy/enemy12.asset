@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: enemy12
   m_EditorClassIdentifier: 
   id: 12
-  imageId: 10
-  enemyName: "\u30B5\u30F3\u30C9\u30B9\u30B3\u30FC\u30D4\u30AA\u30F3"
-  dropTableId: 5
-  maxHp: 60
-  maxAtk: 25
-  minAtk: 14
-  def: 17
-  critical: 30
-  dropPer: 70
+  imageId: 12
+  enemyName: "\u30B9\u30B3\u30FC\u30D4\u30AA\u30F3"
+  dropTableId: 2
+  maxHp: 28
+  maxAtk: 18
+  minAtk: 12
+  def: 12
+  critical: 10
+  dropPer: 40
   enemyType: 0

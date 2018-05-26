@@ -14,9 +14,9 @@ MonoBehaviour:
   id: 3
   imageId: 4
   equipmentName: "\u30EC\u30A4\u30D4\u30A2"
-  durability: 20
-  minAtk: 18
+  durability: 10
+  minAtk: 10
   maxAtk: 20
-  critical: 20
+  critical: 35
   etype: 0
   type: 0

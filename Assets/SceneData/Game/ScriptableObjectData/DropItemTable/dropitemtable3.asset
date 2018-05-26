@@ -13,5 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   data:
+  - dropType: 0
+    id: 2
+  - dropType: 0
+    id: 3
   - dropType: 1
-    id: 1
+    id: 0
