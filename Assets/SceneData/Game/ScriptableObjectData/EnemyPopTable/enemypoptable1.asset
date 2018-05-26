@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: enemypoptable1
   m_EditorClassIdentifier: 
   id: 1
-  enemyIds: 000000000200000004000000
+  enemyIds: 04000000
