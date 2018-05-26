@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AreaManager : MonoBehaviour {
 
@@ -13,11 +14,11 @@ public class AreaManager : MonoBehaviour {
 		//ダンジョンデータの取得
 		DungeonDataBase.ShortData[] DungeonData = DataBaseManager.Instance.GetDataBase<DungeonDataBase>().GetShortDatas();
 		Button btn;
-		Text txt;
+		TextMeshProUGUI txt;
 		for (int i = 0; i<DungeonData.Length; i++) {
 			int index = i;
 			btn = areaButton [index];
-			txt = btn.gameObject.GetComponentInChildren<Text> ();
+			txt = btn.gameObject.GetComponentInChildren<TextMeshProUGUI> ();
 			txt.text = DungeonData [index].name;
 			btn.onClick.AddListener(()=>OnClick(DungeonData[index].id));
 		}
