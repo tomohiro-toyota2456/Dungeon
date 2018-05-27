@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Name: wepon9
   m_EditorClassIdentifier: 
   id: 9
-  imageId: 1
-  equipmentName: "\u30ED\u30F3\u30B0\u30BD\u30FC\u30C9"
-  durability: 30
-  minAtk: 30
-  maxAtk: 40
-  critical: 25
-  etype: 0
+  imageId: 3
+  equipmentName: A6
+  durability: 32
+  minAtk: 17
+  maxAtk: 33
+  critical: 23
+  etype: 1
   type: 0

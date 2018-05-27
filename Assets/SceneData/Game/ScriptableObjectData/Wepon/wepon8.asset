@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   imageId: 1
-  equipmentName: "\u30AF\u30AF\u30EA"
-  durability: 25
-  minAtk: 12
-  maxAtk: 14
-  critical: 35
+  equipmentName: A5
+  durability: 30
+  minAtk: 16
+  maxAtk: 27
+  critical: 21
   etype: 0
-  type: 1
+  type: 0

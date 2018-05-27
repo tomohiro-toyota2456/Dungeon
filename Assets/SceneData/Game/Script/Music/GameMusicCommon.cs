@@ -7,7 +7,7 @@ public class GameMusicCommon
   public static readonly string RepairSEPath = "SE/magic-cure1";
   public static readonly string PhaseSEPath = "SE/dash";
   public static readonly string AreaBGMPath = "BGM/Field";
-  public static readonly string BossBgmPath = "BGM/stage4";
+  public static readonly string BossBgmPath = "BGM/Boss";
   public static readonly string GettingEquipmentSEPath = "SE/door-open1";
 
   //エフェクトから音声再生
@@ -30,7 +30,7 @@ public class GameMusicCommon
     switch(id)
     {
       case 0:
-        return "BGM/ElectricG";
+        return "BGM/stage1";
 
       case 1:
         return "BGM/stage2";

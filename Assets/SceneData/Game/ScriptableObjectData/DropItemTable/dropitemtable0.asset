@@ -19,6 +19,8 @@ MonoBehaviour:
     id: 1
   - dropType: 0
     id: 2
+  - dropType: 0
+    id: 16
   - dropType: 1
     id: 0
   - dropType: 1

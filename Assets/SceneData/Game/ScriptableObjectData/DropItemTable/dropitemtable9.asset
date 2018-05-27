@@ -14,8 +14,16 @@ MonoBehaviour:
   id: 9
   data:
   - dropType: 0
-    id: 2
+    id: 9
   - dropType: 0
-    id: 3
+    id: 10
+  - dropType: 0
+    id: 18
   - dropType: 1
-    id: 0
+    id: 12
+  - dropType: 1
+    id: 13
+  - dropType: 1
+    id: 14
+  - dropType: 1
+    id: 15
