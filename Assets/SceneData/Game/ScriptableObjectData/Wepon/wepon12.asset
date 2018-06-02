@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: wepon12
   m_EditorClassIdentifier: 
   id: 12
-  imageId: 3
-  equipmentName: A9
+  imageId: 0
+  equipmentName: "\u30D1\u30BF"
   durability: 30
   minAtk: 19
   maxAtk: 32

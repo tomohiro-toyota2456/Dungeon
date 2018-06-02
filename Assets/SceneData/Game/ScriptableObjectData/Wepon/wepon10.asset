@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Name: wepon10
   m_EditorClassIdentifier: 
   id: 10
-  imageId: 3
-  equipmentName: A7
+  imageId: 1
+  equipmentName: "\u30D5\u30EC\u30A4\u30EB"
   durability: 24
   minAtk: 15
   maxAtk: 35
   critical: 19
-  etype: 1
+  etype: 0
   type: 0

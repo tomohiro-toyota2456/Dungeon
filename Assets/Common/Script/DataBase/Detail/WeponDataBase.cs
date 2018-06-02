@@ -42,7 +42,6 @@ public class WeponDataBase : DataBase
     wepon.MinAtk = 1;
     wepon.MaxAtk = 6;
     wepon.Id = -1;
-    wepon.ImageId = -1;
     wepon.Critical = 5;
     wepon.Name = "はがねのこぶし";
     wepon.Durability = 99;

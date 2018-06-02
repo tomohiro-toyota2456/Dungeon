@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: wepon3
   m_EditorClassIdentifier: 
   id: 3
-  imageId: 4
+  imageId: 0
   equipmentName: "\u30EC\u30A4\u30D4\u30A2"
   durability: 12
   minAtk: 6

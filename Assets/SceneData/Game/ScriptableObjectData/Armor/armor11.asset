@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11
   imageId: 0
-  equipmentName: B10
+  equipmentName: "\u30A6\u30A9\u30FC\u30DC\u30FC\u30F3\u30D7\u30EC\u30FC\u30C8"
   durability: 17
   def: 32

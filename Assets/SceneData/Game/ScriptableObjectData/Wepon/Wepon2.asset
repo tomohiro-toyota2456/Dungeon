@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: wepon2
   m_EditorClassIdentifier: 
   id: 2
-  imageId: 3
+  imageId: 1
   equipmentName: "\u3053\u3093\u307C\u3046"
   durability: 9
   minAtk: 5

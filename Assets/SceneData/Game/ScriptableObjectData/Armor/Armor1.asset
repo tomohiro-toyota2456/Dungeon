@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Armor1
   m_EditorClassIdentifier: 
   id: 1
-  imageId: 1
-  equipmentName: "\u30A2\u30FC\u30DE\u30FC"
+  imageId: 0
+  equipmentName: "\u30D7\u30EC\u30FC\u30C8"
   durability: 5
   def: 3
