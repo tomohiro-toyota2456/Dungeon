@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameCommon
 {
   public static readonly int MaxOptionNum = 3;
-  public static readonly int EnableRepairNum = 5;
+  public static readonly int EnableRepairNum = 10;
   public static readonly int PlayerHp = 100;
   public static readonly int baseCritical = 0;
   public static float CalcRandomDamage()
