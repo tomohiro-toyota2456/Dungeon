@@ -47,6 +47,7 @@ public class WeponDataBase : DataBase
     wepon.Durability = 99;
     wepon.Type = type;
     wepon.ImageId = 1;
+    wepon.eType = WeponParam.EffectType.Striking;
     return wepon;
   }
 
