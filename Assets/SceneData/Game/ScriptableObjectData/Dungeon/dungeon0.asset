@@ -15,11 +15,11 @@ MonoBehaviour:
   dungeonName: "\u30C0\u30F3\u30B8\u30E7\u30F3\uFF11"
   appearanceTableIds: 00000000000000000000000000000000000000000000000000000000000000000000000001000000
   minAtkOp: 0
-  maxAtkOp: 5
+  maxAtkOp: 7
   minDefOp: 0
-  maxDefOp: 5
+  maxDefOp: 8
   minCtOp: 1
-  maxCtOp: 4
+  maxCtOp: 6
   minDura: 0
-  maxDura: 12
+  maxDura: 1
   musicId: 0
