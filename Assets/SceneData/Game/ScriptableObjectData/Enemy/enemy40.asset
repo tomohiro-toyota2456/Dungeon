@@ -18,7 +18,7 @@ MonoBehaviour:
   maxHp: 92
   maxAtk: 80
   minAtk: 70
-  def: 55
+  def: 15
   critical: 10
   dropPer: 40
   enemyType: 0

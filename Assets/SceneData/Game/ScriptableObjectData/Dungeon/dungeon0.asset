@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: dungeon0
   m_EditorClassIdentifier: 
   id: 0
-  dungeonName: "\u30C0\u30F3\u30B8\u30E7\u30F3\uFF11"
+  dungeonName: "\u306F\u3058\u307E\u308A\u306E\u3082\u308A"
   appearanceTableIds: 00000000000000000000000000000000000000000000000000000000000000000000000001000000
   minAtkOp: 0
   maxAtkOp: 7
