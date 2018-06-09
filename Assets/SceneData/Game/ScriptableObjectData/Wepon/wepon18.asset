@@ -15,8 +15,8 @@ MonoBehaviour:
   imageId: 0
   equipmentName: "\u30AF\u30AF\u30EA"
   durability: 12
-  minAtk: 4
-  maxAtk: 13
-  critical: 38
+  minAtk: 12
+  maxAtk: 22
+  critical: 40
   etype: 0
   type: 1

@@ -16,9 +16,9 @@ MonoBehaviour:
   enemyName: "\u30B9\u30D5\u30A3\u30F3\u30AF\u30B9"
   dropTableId: 4
   maxHp: 40
-  maxAtk: 30
+  maxAtk: 35
   minAtk: 20
-  def: 20
+  def: 13
   critical: 25
   dropPer: 100
   enemyType: 0

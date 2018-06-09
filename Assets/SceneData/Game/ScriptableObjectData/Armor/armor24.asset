@@ -14,5 +14,5 @@ MonoBehaviour:
   id: 24
   imageId: 0
   equipmentName: "\u30DB\u30FC\u30EA\u30FC\u30A2\u30FC\u30DE\u30FC"
-  durability: 28
+  durability: 56
   def: 58
