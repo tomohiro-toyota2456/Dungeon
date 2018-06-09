@@ -62,9 +62,15 @@ public class MessageWindow : MonoBehaviour
     isTouch = false;
 
     float time = 0;
-    while(!isTouch || time >= forceTrueTime)
+
+    bool isWaitingTime = true;
+
+    while(!isTouch && isWaitingTime)
     {
       time += Time.deltaTime;
+
+      isWaitingTime = (time <= forceTrueTime) || (forceTrueTime == -1f);
+
       yield return null;
     }
 
