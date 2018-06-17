@@ -15,7 +15,7 @@ public class OptionDataBase : DataBase
     for(int i = 0; i < GameCommon.MaxOptionNum; i++)
     {
       options[i] = new EquipmentOptionBase();
-      if (Random.Range(0, 100) >= addedOptionPer[i])
+      if (Random.Range(0, 100) >= addedOptionPer[i] || disableOption)
         return options;
 
       int optJudge = Random.Range(0, 100);
