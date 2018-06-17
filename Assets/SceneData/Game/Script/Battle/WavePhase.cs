@@ -33,13 +33,13 @@ public class WavePhase : WavePhaseBase
 
     bool isAnimation = true;
 
-    rect.DOAnchorPos(phaseTextPos, 1);
-    rect2.DOAnchorPos(numberTextPos, 1).OnComplete(()=>isAnimation = false);
+    rect.DOAnchorPos(phaseTextPos, 0.5f);
+    rect2.DOAnchorPos(numberTextPos, 0.5f).OnComplete(()=>isAnimation = false);
 
     while (isAnimation)
       yield return null;
 
-    yield return new WaitForSeconds(1.0f);
+    yield return new WaitForSeconds(0.5f);
 
     phaseText.gameObject.SetActive(false);
     numberText.gameObject.SetActive(false);

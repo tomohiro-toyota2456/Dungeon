@@ -56,7 +56,7 @@ public class BattlePhase : BattlePhaseBase
     playerHp.SetNumber(playerParam.CurHp,GameCommon.PlayerHp);
     enemyHp.SetNumber(enemyParam.CurHp,enemyParam.MaxHp);
 
-    yield return new WaitForSeconds(2.0f);
+    yield return new WaitForSeconds(1.0f);
 
   }
 

@@ -146,8 +146,8 @@ public class DungeonManager : MonoBehaviour
     battlePhase.Init();
 
     messageWindow.SetMessage(enemy.Name + GetAppearanceStr(enemy.Type));
-    yield return enemyImage.FadeIn(0.5f);
-    yield return new WaitForSeconds(0.5f);
+    yield return enemyImage.FadeIn(0.3f);
+    yield return new WaitForSeconds(0.2f);
 
     while (!isNextBattle)
     {
@@ -177,8 +177,8 @@ public class DungeonManager : MonoBehaviour
       {
 
         messageWindow.SetMessage(enemy.Name + GetEndStr(enemy.Type));
-        yield return enemyImage.FadeOut(0.5f);
-        yield return new WaitForSeconds(0.5f);
+        yield return enemyImage.FadeOut(0.3f);
+        yield return new WaitForSeconds(0.2f);
 
         phase++;
         break;
@@ -190,7 +190,7 @@ public class DungeonManager : MonoBehaviour
         player.SetMainWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Main), null, null, null);
         playerData.SetMainWepon(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
       }
 
       if (player.EnableUsingCountSubWepon <= 0)
@@ -199,7 +199,7 @@ public class DungeonManager : MonoBehaviour
         player.SetSubWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Sub), null, null, null);
         playerData.SetSubWepon(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
       }
 
       if (player.EnableUsingCountArmor <= 0)
@@ -208,7 +208,7 @@ public class DungeonManager : MonoBehaviour
         player.SetArmor(armorDataBase.GetDefaultArmor(), null, null, null);
         playerData.SetArmor(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
       }
 
       yield return battlePhase.ExecBattlePhase(player, enemy);
@@ -264,7 +264,7 @@ public class DungeonManager : MonoBehaviour
           PlayerEquipmentWepon eWepon = new PlayerEquipmentWepon(WeponParam.WeponType.Sub);
           eWepon.Equip(wepon, options[0], options[1], options[2]);
 
-          popup.Init(EquipmentChangePopup.EquipmentType.Wepon, player.GetEquipmentImageIds()[0],player.SubWeponName, player.CalcSubWeponMaxAtk(), player.CalcSubWeponCritical(), player.EnableUsingCountSubWepon,
+          popup.Init(EquipmentChangePopup.EquipmentType.Wepon, player.GetEquipmentImageIds()[1],player.SubWeponName, player.CalcSubWeponMaxAtk(), player.CalcSubWeponCritical(), player.EnableUsingCountSubWepon,
                      wepon.ImageId,wepon.Name, eWepon.CalcMaxAtk(), eWepon.CalcCritical(), eWepon.CalcDurability());
 
           popupmanager.Open(popup);
