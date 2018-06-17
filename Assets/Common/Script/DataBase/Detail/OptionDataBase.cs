@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class OptionDataBase : DataBase
 {
+  [SerializeField]
+  bool disableOption = false;
+
   int[] addedOptionPer = new int[3] { 50, 40, 20 };
 
   public EquipmentOptionBase[] CalcWeponOption(float atkParam,int ctParam,int duraParam,int minAtkOpt,int maxAtkOpt,int minCtOpt,int maxCtOpt,int minDuraOpt,int maxDuraOpt)
