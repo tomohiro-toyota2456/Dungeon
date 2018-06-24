@@ -15,7 +15,7 @@ public class GameCommon
 
   public static float CalcCriticalBonus(int addCriticalPoint)
   {
-    float t = Random.Range(0,100) < (baseCritical + addCriticalPoint) ? 2.0f : 1.0f;
+    float t = Random.Range(0,100) < (baseCritical + addCriticalPoint) ? 1.5f : 1.0f;
     return t;
   }
 
