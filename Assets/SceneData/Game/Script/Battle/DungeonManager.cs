@@ -45,6 +45,14 @@ public class DungeonManager : MonoBehaviour
   int phase = 1;
   int maxPhase = 0;
 
+  //出現にかかる時間
+  readonly float enemyFadeInTime = 0.3f;
+  readonly float objectFadeInTime = 0.5f;
+
+  //出現後止める時間
+  readonly float enemyFadeInWaitTime = 0.2f;
+  readonly float objectFadeInWaitTime = 0.5f;
+
   PlayerData playerData = new PlayerData();
 
 	// Use this for initialization
@@ -146,8 +154,10 @@ public class DungeonManager : MonoBehaviour
     battlePhase.Init();
 
     messageWindow.SetMessage(enemy.Name + GetAppearanceStr(enemy.Type));
-    yield return enemyImage.FadeIn(0.3f);
-    yield return new WaitForSeconds(0.2f);
+
+    //Enemy出現 宝箱の場合だけ少しフェードに時間をかける
+    yield return enemyImage.FadeIn(enemy.Type == EnemyParamBase.EnemyType.Monster ? enemyFadeInTime : objectFadeInTime);
+    yield return new WaitForSeconds(enemy.Type == EnemyParamBase.EnemyType.Monster ? enemyFadeInWaitTime : objectFadeInWaitTime);
 
     while (!isNextBattle)
     {
