@@ -14,7 +14,7 @@ MonoBehaviour:
   id: 19
   imageId: 19
   enemyName: "\u30CA\u30DE\u30B3"
-  dropTableId: 5
+  dropTableId: 6
   maxHp: 47
   maxAtk: 27
   minAtk: 20
