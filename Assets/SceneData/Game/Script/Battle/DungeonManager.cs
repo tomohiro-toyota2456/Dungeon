@@ -194,13 +194,15 @@ public class DungeonManager : MonoBehaviour
         break;
       }
 
+      yield return battlePhase.ExecBattlePhase(player, enemy);
+
       if (player.EnableUsingCountMainWepon <= 0)
       {
         messageWindow.SetMessage(player.MainWeponName + "はこわれた!");
         player.SetMainWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Main), null, null, null);
         playerData.SetMainWepon(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
       }
 
       if (player.EnableUsingCountSubWepon <= 0)
@@ -209,7 +211,7 @@ public class DungeonManager : MonoBehaviour
         player.SetSubWepon(weponDataBase.GetDefaultWepon(WeponParam.WeponType.Sub), null, null, null);
         playerData.SetSubWepon(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
       }
 
       if (player.EnableUsingCountArmor <= 0)
@@ -218,10 +220,9 @@ public class DungeonManager : MonoBehaviour
         player.SetArmor(armorDataBase.GetDefaultArmor(), null, null, null);
         playerData.SetArmor(-1, new EquipmentOptionBase[3]);
         playerData.SaveEquipmentData();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
       }
 
-      yield return battlePhase.ExecBattlePhase(player, enemy);
     }
 
     //ドロップ抽選
