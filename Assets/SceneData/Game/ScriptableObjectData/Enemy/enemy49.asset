@@ -20,5 +20,5 @@ MonoBehaviour:
   minAtk: 80
   def: 4
   critical: 0
-  dropPer: 46
+  dropPer: 80
   enemyType: 0
