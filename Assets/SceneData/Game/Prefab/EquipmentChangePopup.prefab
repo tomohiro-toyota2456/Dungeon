@@ -1342,8 +1342,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: b0c8714cb8533df448a406b6f8e6c480, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2724,9 +2724,6 @@ MonoBehaviour:
   icon2: {fileID: 114307020247622112}
   button1: {fileID: 114718101658908686}
   button2: {fileID: 114106707651988026}
-  onOffSprites:
-  - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   decisionButton: {fileID: 114411686690965966}
 --- !u!114 &114955032976955438
 MonoBehaviour:

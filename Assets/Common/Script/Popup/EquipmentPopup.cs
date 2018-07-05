@@ -50,8 +50,8 @@ public class EquipmentPopup : PopupBase
     SetSubWeponParam(playerParam.CalcSubWeponMaxAtk(), playerParam.CalcSubWeponCritical(), playerParam.EnableUsingCountSubWepon);
     SetArmorParam(playerParam.CalcArmorDef(),playerParam.EnableUsingCountArmor);
 
-    mainWeponNameText.text = playerParam.MainWeponName;
-    subWeponNameText.text  = playerParam.SubWeponName;
+    mainWeponNameText.text = playerParam.MainWeponName +"(メイン)";
+    subWeponNameText.text  = playerParam.SubWeponName+"(サブ)";
     armorNameText.text     = playerParam.ArmorName;
 
     int[] imageIds = playerParam.GetEquipmentImageIds();
