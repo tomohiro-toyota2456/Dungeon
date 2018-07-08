@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameMusicCommon
 {
   public static readonly string RepairSEPath = "SE/magic-cure1";
-  public static readonly string PhaseSEPath = "SE/dash";
+  public static readonly string PhaseSEPath = "SE/Mini_Dash";
   public static readonly string AreaBGMPath = "BGM/Field";
   public static readonly string BossBgmPath = "BGM/Boss";
   public static readonly string GettingEquipmentSEPath = "SE/door-open1";
