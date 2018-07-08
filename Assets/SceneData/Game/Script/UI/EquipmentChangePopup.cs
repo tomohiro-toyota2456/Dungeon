@@ -36,8 +36,6 @@ public class EquipmentChangePopup : PopupBase
   [SerializeField]
   Button button2;
   [SerializeField]
-  Sprite[] onOffSprites = new Sprite[2];
-  [SerializeField]
   Button decisionButton;
 
   bool isSelectedNowEquipment = true;//現在装備選択中
@@ -92,8 +90,8 @@ public class EquipmentChangePopup : PopupBase
 
   void UpdateButtonSprite()
   {
-    button1.image.sprite = isSelectedNowEquipment ? onOffSprites[0] : onOffSprites[1];
-    button2.image.sprite = isSelectedNowEquipment ? onOffSprites[1] : onOffSprites[0];
+    button1.image.color = isSelectedNowEquipment ? Color.yellow : Color.white;
+    button2.image.color = isSelectedNowEquipment ? Color.white : Color.yellow;
   }
 
   void OnClickDecisionButton()
