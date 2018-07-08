@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: cb11335c4ac9c44e0aa00531aeeac286
-timeCreated: 1519910366
+guid: b69c50f29c6824057837dde58982dd6f
+timeCreated: 1531041681
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -13,7 +13,8 @@ TrueTypeFontImporter:
   fontName: pandora-font
   fontNames:
   - pandora-font
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 796faf55d234d4611b486abfca9265e8, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
