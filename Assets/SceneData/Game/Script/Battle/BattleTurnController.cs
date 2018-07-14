@@ -17,7 +17,7 @@ public class BattleTurnController : IBattleTurn
   public IBattleCommand BattleCommand { set { battleCommand = value; } }
   public IDamageEffect DamageEffect { set { damageEffect = value; } }
 
-  string escapeDesc = "逃げると現在の装備のままダンジョンを\n脱出できます。逃げますか?";
+  string escapeDesc = "現在の装備のままダンジョンを\n脱出できます。逃げますか?";
 
   public enum ActionType
   {
@@ -149,7 +149,7 @@ public class BattleTurnController : IBattleTurn
     {
       bool isDecision = false;
       var popup = PopupManager.Instance.CreateSimplePopup();
-      popup.Init("にげますか?", escapeDesc, () =>
+      popup.Init("逃げますか?", escapeDesc, () =>
       {
         ChangeScene.Instance.LoadScene("AreaMap");
         isDecision = true;
