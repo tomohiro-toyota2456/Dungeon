@@ -13,7 +13,7 @@ public class EnemyDataBase : DataBase
     {
       if (enemyParams[i].Id == id)
       {
-        return Instantiate(enemyParams[i]);
+        return enemyParams[i];
       }
     }
 

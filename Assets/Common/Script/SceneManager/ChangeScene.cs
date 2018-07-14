@@ -40,7 +40,14 @@ public class ChangeScene : UnitySingleton <ChangeScene>
 			}
 		}
 
-		AsyncOperation Async = SceneManager.LoadSceneAsync (loadSceneName, LoadSceneMode.Additive);
+    var unloadOp = Resources.UnloadUnusedAssets();
+
+    while(!unloadOp.isDone)
+    {
+      yield return null;
+    }
+
+    AsyncOperation Async = SceneManager.LoadSceneAsync (loadSceneName, LoadSceneMode.Additive);
 
 		while (!Async.isDone) {
 			yield return  null;

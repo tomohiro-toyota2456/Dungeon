@@ -13,7 +13,7 @@ public class WeponDataBase : DataBase
     {
       if(weponParams[i].Id == id)
       {
-        return Instantiate(weponParams[i]);
+        return weponParams[i];
       }
     }
 

@@ -13,7 +13,7 @@ public class EnemyPopTableDataBase : DataBase
     {
       if (tables[i].Id == id)
       {
-        return Instantiate(tables[i]);
+        return tables[i];
       }
     }
 

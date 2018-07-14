@@ -19,7 +19,7 @@ public class DungeonDataBase : DataBase
     {
       if(dungeonDatas[i].Id == id)
       {
-        return Instantiate(dungeonDatas[i]);
+        return dungeonDatas[i];
       }
     }
 

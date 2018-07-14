@@ -16,7 +16,7 @@ public class ArmorDataBase : DataBase
     {
       if (armorParams[i].Id == id)
       {
-        return Instantiate(armorParams[i]);
+        return armorParams[i];
       }
     }
 
