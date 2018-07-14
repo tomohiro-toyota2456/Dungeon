@@ -40,6 +40,7 @@ public class DungeonManager : MonoBehaviour
   PopupManager popupmanager;
 
   public static int DungeonId { private get; set; }
+  public static DungeonClearData.ClearData ClearData { private get; set; }
 
   DungeonData dungeonData;
   int phase = 1;
@@ -319,6 +320,11 @@ public class DungeonManager : MonoBehaviour
     if (phase > maxPhase)
     {
       isNextBattle = false;
+
+      //クリア状況セーブ
+      ClearData.isClears[DungeonId] = true;
+      DungeonClearData.SaveClearData(ClearData);
+
       yield return clearEffect.PlayEffect();
 
       yield return new WaitForSeconds(2.0f);
