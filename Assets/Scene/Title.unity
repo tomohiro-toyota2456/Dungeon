@@ -186,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000019073486, y: -277.2226}
+  m_AnchoredPosition: {x: 0, y: -277.2226}
   m_SizeDelta: {x: 516.9, y: 96.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &98541300
@@ -778,7 +778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.9, y: 361.2}
+  m_AnchoredPosition: {x: 0, y: 361.2}
   m_SizeDelta: {x: 516.9, y: 96.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049235705
@@ -800,7 +800,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\u30C0\u30F3\u30B8\u30E7\u30F3(\u304B\u308A)"
+  m_text: "\rDecision"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4ef4dba2073f7a40a56c576cf528ab6, type: 2}
   m_sharedMaterial: {fileID: 21378300903625292, guid: f4ef4dba2073f7a40a56c576cf528ab6,
@@ -835,7 +835,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
