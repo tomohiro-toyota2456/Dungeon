@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleTurnController : IBattleTurn
 {
@@ -16,6 +17,7 @@ public class BattleTurnController : IBattleTurn
   public IBattleEffectFactory EffectFactory { set { effectFactory = value; } }
   public IBattleCommand BattleCommand { set { battleCommand = value; } }
   public IDamageEffect DamageEffect { set { damageEffect = value; } }
+  public Button EquipmentButton { set; private get; }//装備確認ボタン
 
   string escapeDesc = "現在の装備のままダンジョンを\n脱出できます。逃げますか?";
 
@@ -78,7 +80,15 @@ public class BattleTurnController : IBattleTurn
     }
 
     //入力待ち
+
+    //装備確認ボタン有効化
+    EquipmentButton.enabled = true;
+
     yield return battleCommand.Command();
+
+    //装備確認ボタン無効化
+    EquipmentButton.enabled = false;
+
 
     battleCommand.Hide();
 
@@ -90,7 +100,7 @@ public class BattleTurnController : IBattleTurn
     battleLog.actionUserName = "プレイヤー";
     battleLog.targetName = enemyParam.Name;
 
-    switch(battleCommand.ButtonType)
+    switch (battleCommand.ButtonType)
     {
       case 0://Main
         eType = playerParam.MainWeponEffectType;
@@ -112,7 +122,6 @@ public class BattleTurnController : IBattleTurn
         battleLog.actionType = ActionType.Escape;
         break;
     }
-
     
     if(battleCommand.ButtonType <= 1)
     {

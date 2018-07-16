@@ -23,7 +23,7 @@ public abstract class BattlePhaseBase : MonoBehaviour
   [SerializeField]
   protected DamageEffect damageEffect;
   [SerializeField]
-  protected GameObject touchGuard;
+  protected Button equipmentButton;
 
   public abstract IEnumerator ExecBattlePhase(PlayerParam playerParam, EnemyParam enemyParam);
   public virtual void Init()
