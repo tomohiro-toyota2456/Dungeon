@@ -22,6 +22,8 @@ public abstract class BattlePhaseBase : MonoBehaviour
   protected MessageWindow messageWindow;
   [SerializeField]
   protected DamageEffect damageEffect;
+  [SerializeField]
+  protected GameObject touchGuard;
 
   public abstract IEnumerator ExecBattlePhase(PlayerParam playerParam, EnemyParam enemyParam);
   public virtual void Init()

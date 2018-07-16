@@ -195,6 +195,7 @@ public class DungeonManager : MonoBehaviour
         break;
       }
 
+      //行動選択
       yield return battlePhase.ExecBattlePhase(player, enemy);
 
       if (player.EnableUsingCountMainWepon <= 0)

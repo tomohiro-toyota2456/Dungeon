@@ -36,7 +36,13 @@ public class BattlePhase : BattlePhaseBase
 
     IBattleTurn turn = battleTurnController;
 
+    //タッチガードを解除
+    touchGuard.SetActive(false);
+
     yield return isPlayerTurn ? turn.ExecPlayerTurn() : turn.ExecEnemyTurn();
+
+    //ここからは操作しないのでタッチガードを設定
+    touchGuard.SetActive(true);
 
     //文字
     messageWindow.SetMessage(ConvertMessageFromLog(battleTurnController.Log));
